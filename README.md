@@ -9,13 +9,13 @@ berikut fitur yang ada <br>
 -mendaftar cafe <br>
 -pengelolaan cafe <br>
 -penerimaan cafe <br>
-
-Pengembangan Program<br>
 <br>
-Menggunakan Laravel Sepuluh <br>
+
+<h3>Pengembangan Program </h3><br>
+Menggunakan Laravel 10 <br>
 Menggunakan PHP 8.1.0 <br>
 <br>
-Cara Pengistalan<br>
+<h3>Cara Pengistalan</h3><br>
 
 -   Clone Repositori <br>
 -   Copy .env.example <br>
