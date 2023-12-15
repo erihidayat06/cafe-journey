@@ -9,3 +9,17 @@ berikut fitur yang ada <br>
 -mendaftar cafe <br>
 -pengelolaan cafe <br>
 -penerimaan cafe <br>
+
+Pengembangan Program<br>
+<br>
+Menggunakan Laravel Sepuluh <br>
+Menggunakan PHP 8.1.0 <br>
+<br>
+Cara Pengistalan<br>
+
+-   Clone Repositori <br>
+-   Copy .env.example <br>
+-   Rubah Menjadi .env <br>
+-   Istal Composer Pada Terminal <br>
+-   Jalankan php artisan key:generate <br>
+-   Jalankan php artisan serve<br>

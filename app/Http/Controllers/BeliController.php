@@ -48,7 +48,7 @@ class BeliController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->pemilik == auth()->user()->id){
+        if ($request->pemilik == auth()->user()->id) {
             return redirect()->back()->with('error', 'Tidak Boleh Pesan, di Cafe Sendiri');
         };
 

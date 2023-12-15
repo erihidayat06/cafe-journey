@@ -34,7 +34,7 @@
                         <th>Harga</th>
                         <th>Total Harga</th>
                     </tr>
-                    @foreach ($pesanan->Where('no_pesanan', $cafe->no_pesanan) as $pesanan)
+                    @foreach ($pesanans->Where('no_pesanan', $cafe->no_pesanan) as $pesanan)
                         <tr>
                             <td>
                                 @if (isset($pesanan->minum->nama_minuman))
