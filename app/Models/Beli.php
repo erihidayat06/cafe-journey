@@ -22,9 +22,12 @@ class Beli extends Model
         }
     }
 
+    // Scope filter digunakan untuk menfilter berdasarkan user_id
     public function scopeFilter($query)
     {
+        // Jika terdapat auth()->user()->id
         if (isset(auth()->user()->id)) {
+            // di query di kecualikan dengan user_id
             $query->where('user_id', auth()->user()->id);
         }
     }
@@ -40,17 +43,16 @@ class Beli extends Model
         $query->where('created_at', 'like', '%' . $filters . '%');
     }
 
-    public function scopeFiltertanggal($query,Array $filters){
+    public function scopeFiltertanggal($query, array $filters)
+    {
 
-        $query->when($filters['dari'] ?? false, function($query, $dari){
-            return $query->where('updated_at', ">=" , $dari);
+        $query->when($filters['dari'] ?? false, function ($query, $dari) {
+            return $query->where('updated_at', ">=", $dari);
         });
 
-        $query->when($filters['sampai'] ?? false, function($query, $sampai){
-            return $query->where('updated_at', "<=" , date('Y-m-d', strtotime('+1 days', strtotime($sampai))));
+        $query->when($filters['sampai'] ?? false, function ($query, $sampai) {
+            return $query->where('updated_at', "<=", date('Y-m-d', strtotime('+1 days', strtotime($sampai))));
         });
-
-
     }
 
     public function minum()

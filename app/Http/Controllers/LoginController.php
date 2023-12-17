@@ -13,6 +13,7 @@ class LoginController extends Controller
     {
         return view('login.index');
     }
+
     public function authenticate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
