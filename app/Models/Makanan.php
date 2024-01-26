@@ -14,7 +14,7 @@ class Makanan extends Model
 
     public function cafe()
     {
-        $this->belongsTo(Cafe::class);
+        return $this->belongsTo(Cafe::class);
     }
 
     public function scopeFilter($query)
@@ -22,7 +22,7 @@ class Makanan extends Model
         $query->where('cafe_id', auth()->user()->cafe->id);
     }
 
-    
+
     public function scopeCari($query, $cari)
     {
         $query->where('nama_makanan', 'like', '%' . $cari . '%');

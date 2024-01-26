@@ -15,12 +15,12 @@ class Minum extends Model
 
     public function cafe()
     {
-        $this->hasMany(Cafe::class);
+        return $this->hasMany(Cafe::class);
     }
 
     public function beli()
     {
-        $this->hasMany(Beli::class);
+        return $this->hasMany(Beli::class);
     }
 
     public function scopeFilter($query)
