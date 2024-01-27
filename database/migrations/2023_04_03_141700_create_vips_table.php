@@ -16,13 +16,10 @@ return new class extends Migration
             $table->string('nama_tempat');
             $table->string('gambar');
             $table->string('deskripsi');
-            $table->boolean('ac')->default(0);
-            $table->boolean('tv')->default(0);
-            $table->boolean('proyektor')->default(0);
-            $table->boolean('papan_tulis')->default(0);
-            $table->boolean('meja')->default(0);
-            $table->boolean('kursi')->default(0);
+            $table->enum('fasilitas', ['ac', 'proyektor', 'tv', 'papan tulis', 'meja', 'kursi']);
             $table->integer('kapasitas');
+            $table->integer('harga');
+            $table->foreignId('cafe_id');
             $table->timestamps();
         });
     }

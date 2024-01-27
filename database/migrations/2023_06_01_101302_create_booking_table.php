@@ -16,6 +16,8 @@ return new class extends Migration
             $table->date('tanggal_booking')->default(null);
             $table->time('jam_booking')->default(null);
             $table->enum('opsi', ['tunggu', 'sukses', 'selesai']);
+            $table->string('no_pesanan', 20);
+            $table->string('bukti');
             $table->foreignId('user_id');
             $table->foreignId('vip_id');
             $table->foreignId('cafe_id');

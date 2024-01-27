@@ -9,11 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    protected $table = 'utilizadores';
     public function up(): void
     {
-
-        Schema::table('cafe', function (Blueprint $table) {
+        Schema::create('cafes', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_cafe');
+            $table->string('gambar_logo');
+            $table->string('gambar_profil');
+            $table->string('alamat');
+            $table->string('map');
+            $table->string('deskripsi');
             $table->enum('domisili', ['Kota Tegal', 'Kab Tegal']);
             $table->enum('kecamatan', [
                 'margasari', 'bumijawa', 'bojong', 'balapulang', 'pagerbarang',
@@ -24,6 +29,15 @@ return new class extends Migration
             $table->string('whatsapp');
             $table->string('facebook');
             $table->string('instagram');
+            $table->string('bank')->nullable();
+            $table->string('no_rekening')->nullable();
+            $table->string('wallet')->nullable();
+            $table->string('no_wallet')->nullable();
+            $table->string('no_antrian');
+            $table->enum('konfirmasi', ['tunggu', 'konfirmasi']);
+            $table->string('slug');
+            $table->foreignId('user_id');
+            $table->timestamps();
         });
     }
 
@@ -32,11 +46,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('cafes', function (Blueprint $table) {
-            $table->dropColumn('domisili');
-            $table->dropColumn('whatsapp');
-            $table->dropColumn('facebook');
-            $table->dropColumn('instagram');
-        });
+        Schema::dropIfExists('cafe');
     }
 };
