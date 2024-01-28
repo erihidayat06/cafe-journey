@@ -26,9 +26,7 @@
                 @elseif ($lencana[2] == $cafe->nama_cafe)
                     <img class="lencana shadow-lg" src="/assets/img/terbaik_3.png" alt="" width="60px">
                 @endif
-
                 {{-- END Lencana --}}
-
 
                 <div style="width: 160px; height: 290px;" class="card rounded">
                     <a href="/cafe/{{ $cafe->slug }}" class="text-decoration-none text-main">
