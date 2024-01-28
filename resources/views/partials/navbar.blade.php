@@ -9,7 +9,7 @@
             @auth
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Bantuan</a>
@@ -29,19 +29,19 @@
                     </div>
                 </form>
             </div>
-            <a style="width: 120px" href="/booking" class="btn rounded-75 btn-primary position-relative ms-2">
+            <a href="/booking" class="btn active-button position-relative ms-2">
                 <i class="bi bi-handbag-fill"></i> Pesanan
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                <span class="badge rounded-pill bg-light text-danger">
                     @if (count(auth()->user()->booking) !== null)
                         {{ count(auth()->user()->booking) }}
                     @endif
                 </span>
             </a>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="list-style: none">
                 <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fcc8703441cb378d610c5e8247cefdb2d52b46d_full.jpg" alt="User Avatar"
-                        class="avatar rounded-circle ms-3" width="40" height="40">
+                        class="avatar rounded-circle ms-3" width="45" height="45">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg-end border-0 shadow mt-3">
                     <li class="text-center">

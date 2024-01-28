@@ -1,11 +1,5 @@
-<style>
-    footer {
-        bottom: 0px;
-    }
-</style>
-<footer style="margin-top: 300px; " class="footer p-2">
+<footer class="footer p-2">
     <div class="container">
-
         <div class="row row-cols-md-2 row-cols-1 mt-5">
             <div class="col">
                 <ul>
@@ -31,12 +25,16 @@
     </div>
     </div>
     <hr>
-    <div class="text-center">
+    <div class="text-center my-2">
         <div class="copyright text-white">
-            &copy; Copyright <strong><span>Cafe Journey</span></strong>. All Rights Reserved
+            &copy;@php
+                echo date('Y');
+            @endphp
+            - Copyright <strong><span>Cafe Journey</span></strong>. All Rights Reserved
         </div>
         <div class="credits text-white">
-            Designed by <a href="https://bootstrapmade.com/" class="text-white text-decoration-none">Kelompok 2</a>
+            Build with <i class="bi bi-heart-fill text-light"></i> by <span>Team Cafe Journey</span>
         </div>
     </div>
+
 </footer>

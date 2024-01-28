@@ -2,7 +2,8 @@
 
 @section('container')
     <link rel="stylesheet" href="/assets/css/style.css">
-    <h2 class="mt-3">Halaman Booking</h2>
+    <h2 class="mt-3">Pesanan</h2>
+    <hr>
     @foreach ($bookings as $booking)
         <div class="card m-2 p-2">
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 d-flex align-items-center">
