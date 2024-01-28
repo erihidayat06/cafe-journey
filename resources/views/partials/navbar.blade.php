@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg py-3 shadow-sm" style="background-color: #fff;">
+<nav class="navbar navbar-expand-lg py-3 shadow-sm fixed-top" style="background-color: #fff;">
     <div class="container">
         <a class="navbar-brand" href="/">Cafe Journey</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -75,19 +75,21 @@
             @else
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bantuan</a>
+                    <a class="nav-link" href="#">Help</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tentang Kami</a>
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contacts</a>
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <a style="padding: 5px 10px" href="/register" class="btn rounded btn-primary ">Daftar</a>
-                <a style="padding: 4px 11px" href="/login"
-                    class="btn btn-light rounded">Masuk</a>
+                <a id="button-register" href="/register" class="btn active-button">Sign Up</a>
+                {{-- <a id="button-login" href="/login" class="btn btn-light deactive-button">Login</a> --}}
             </div>
             @endauth
         </div>
@@ -120,84 +122,6 @@
             // Jika user membatalkan, tidak lakukan apa-apa
         }
     }
+    
     </script>
 </nav>
-
-{{-- <nav style="padding: 50px 0px" class="navbar navbar-expand-lg navbar-main-color">
-    <div class="container-fluid">
-        <a class="navbar-brand text-light d-flex align-items-end mt-2" href="/">
-            <img src="assets/img/logo1.png" width="17px" alt="">
-            <span class="ms-3"> Cafe Journey</span>
-        </a>
-        <div class="col-lg-8 mt-3 ">
-            <form action="/" class="d-flex" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari Nama Cafe/Daerah Cafe"
-                        aria-label="Cari Nama Cafe/Daerah Cafe" aria-describedby="basic-addon2" name="cari"
-                        value="{{ request('cari') }}">
-                    <button type="submit" class="btn btn-primary btn-cari" id="basic-addon2"><i
-                            class="bi bi-search"></i></button>
-                </div>
-            </form>
-        </div>
-        <ul class="navbar-nav me-auto mt-3">
-            @auth
-                <div class="row row-cols-lg-2">
-                    <div class="col">
-                        <a style="width: 120px" href="/booking" class="btn btn-primary position-relative ms-2"><i
-                                class="bi bi-building-check"></i>
-                            Booking <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                @if (count(auth()->user()->booking) !== null)
-                                    {{ count(auth()->user()->booking) }}
-                                @endif
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ substr(auth()->user()->name, 0, 9) }}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-lg-end">
-                                <li class="text-center">
-                                    <h6 class="p-0">{{ auth()->user()->name }}</h6>
-                                    <span style="font-size: 14px; color:rgb(117, 117, 117)">User</span>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/profil">Profil</a></li>
-                                <li class="d-flex justify-content-between align-items-start">
-                                    <a class="dropdown-item" href="/beli">Pesanan</a>
-                                </li>
-                                @can('admin')
-                                    <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Cafe</a></li>
-                                @endcan
-                                @can('admin_web')
-                                    <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
-                                @endcan
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <li><button class="dropdown-item" type="submit">Logout</button></li>
-                                </form>
-                            </ul>
-                        </li>
-                    </div>
-                </div>
-            </ul>
-        @else
-            <li class="nav-item dropdown">
-                <a style="padding: 5px 10px" href="/register" class="btn btn-sm btn-primary ">Daftar</a>
-                <a style="padding: 4px 11px" href="/login"
-                    class="btn btn-sm btn-light border border-3 border-white text-main">Masuk</a>
-            </li>
-        @endauth
-        </ul>
-    </div>
-</nav> --}}
