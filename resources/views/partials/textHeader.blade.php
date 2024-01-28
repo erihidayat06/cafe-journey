@@ -1,4 +1,4 @@
-<div class="text-header">
+{{-- <div class="text-header">
     <div class="container-fluid">
 
         <div class="row row-cols-2 row-cols-lg-2">
@@ -21,11 +21,11 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Modal -->
-<div class="modal fade" id="tentangModal" tabindex="-1" aria-labelledby="tentangModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="tentangModal" tabindex="-1" aria-labelledby="tentangModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -44,11 +44,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 {{-- Bantuan --}}
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+{{-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Bantuan</h5>
@@ -57,5 +57,5 @@
     <div class="offcanvas-body">
         @include('partials.collaps')
     </div>
-</div>
+</div> --}}
 {{-- End Bantuan --}}
