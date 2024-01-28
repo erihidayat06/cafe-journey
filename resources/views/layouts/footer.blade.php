@@ -22,15 +22,9 @@
                     <li class="fw-bold mb-2 ">
                         <h5><strong>Tentang Kami</strong> </h5>
                     </li>
-                    <li>Cafe Journey adalah tempat terpercaya yang dapat membantu Anda menemukan berbagai cafe menarik
-                        di kota dan kabupaten Tegal. <br> Kami fokus pada kualitas, kenyamanan, dan kenikmatan dalam
-                        menyediakan informasi tentang cafe terbaik. Kami memberikan informasi lengkap tentang menu lezat
-                        dan suasana yang menarik di setiap cafe. <br> Tim kami telah melakukan penelitian dan pengujian
-                        untuk
-                        memastikan bahwa setiap cafe yang terdaftar di platform kami memenuhi standar kualitas yang
-                        tinggi. <br> Kami berkomitmen untuk memberikan pengalaman pencarian yang mudah, menarik, dan
-                        memuaskan bagi semua pecinta kopi dan pengunjung cafe. Temukan tempat yang sempurna untuk
-                        pertemuan bisnis, nongkrong santai, atau bersantai bersama teman-teman di Cafe Journey.</li>
+                    <li>
+                        Cafe Journey adalah panduan andal untuk menemukan cafe menarik di Tegal. Kami fokus pada kualitas, kenyamanan, dan kenikmatan dalam memberikan informasi tentang cafe terbaik.
+                    </li>
                 </ul>
             </div>
         </div>
