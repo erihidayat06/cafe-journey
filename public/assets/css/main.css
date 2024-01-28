@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 :root {
-    --main-color: #4b1f1f;
+    --main-color: #c1745f;
     --btn-color: #4b1f1f;
     --hover-color: #5e3030;
     --body-color: #f5f5f5;
@@ -13,7 +13,7 @@
 
 .navbar-brand {
     font-family: 'Courgette';
-    font-size: 30px;
+    font-size: 26px !important;
     color: var(--main-color);
 }
 
@@ -21,8 +21,40 @@
     color: var(--hover-color);
 }
 
+.nav-item {
+    font-size: 18px;
+    font-family: 'Nunito', serif;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+    font-size: 18px;
+    font-family: 'Nunito', serif;
+    font-weight: 700 !important;
+    color: #ff755f !important;
+}
+
 .nav-link {
     color: var(--main-color);
+}
+
+.active-button {
+    background-color: var(--main-color) !important;
+    color: var(--body-color) !important;
+    padding: 10px 20px !important; 
+    border-radius: 30px !important;
+}
+
+.active-button:hover {
+    background-color: #a12f1d !important;
+    color: var(--body-color) !important;
+    padding: 10px 20px !important; 
+    border-radius: 30px !important;
+}
+
+.deactive-button {
+    padding: 10px 20px !important; 
+    border-radius: 30px !important;
 }
 
 /* dropdown-item */
@@ -37,6 +69,38 @@
 
 .avatar {
     border: solid 5px var(--hover-color);
+}
+
+/* HERO */
+.hero-title {
+    font-size: 2.5rem !important; 
+    font-family: 'Poppins', serif; /* Font family */
+    font-weight: 800;
+    color: #333; /* Text color */
+}
+
+.hero-subtitle {
+    font-size: 1.2rem; 
+    color: #666; 
+}
+
+.hero-button {
+    background-color: #c1745f !important;
+    font-size: 1rem; 
+    padding: 10px 15px !important;
+    border-radius: 10px; 
+    color: var(--body-color) !important;
+    border-radius: 30px !important;
+    border: solid 2px #c1745f !important;
+    transition: background-color 0.3s ease; 
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background-color: var(--body-color) !important;
+    color: #c1745f !important;
+    font-weight: bold;
+    border: solid 2px #c1745f !important;
 }
 
 body {
@@ -392,7 +456,45 @@ body {
 
 .lencana{
     position: absolute;
-    top: 2.5px;
-    left: 11px;
+    top: 26px;
+    left: 38px;
     z-index: 1;
+}
+
+/* Configuration */
+.rounded-sm {
+    border-radius: 20px !important;
+}
+
+#cafe-list-container {
+    background-color: #c1745f;
+}
+
+#cafe-list-title h5 {
+    font-family: 'Courgette', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+#cafe-list-title a {
+    background-color: #fff;
+    color: #c1745f !important;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#cafe-list-title a:hover {
+    background-color: #c1745f;
+    color: #fff !important;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.5s;
 }
