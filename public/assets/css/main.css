@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 :root {
     --main-color: #4b1f1f;
     --btn-color: #4b1f1f;
@@ -7,6 +9,34 @@
 
 .navbar-main-color {
     background-color: var(--main-color);
+}
+
+.navbar-brand {
+    font-family: 'Courgette';
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+.navbar-brand:hover {
+    color: var(--hover-color);
+}
+
+.nav-link {
+    color: var(--main-color);
+}
+
+/* dropdown-item */
+.dropdown-item {
+    color: var(--main-color);
+}
+
+.dropdown-item:hover {
+    background-color: #4b1f1f6b !important;
+    color: white !important;
+}
+
+.avatar {
+    border: solid 5px var(--hover-color);
 }
 
 body {
