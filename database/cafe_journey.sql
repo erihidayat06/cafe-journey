@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2023 at 07:42 AM
+-- Generation Time: Dec 17, 2023 at 06:49 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -44,10 +44,9 @@ CREATE TABLE `belis` (
 --
 
 INSERT INTO `belis` (`id`, `no_pesanan`, `jumlah`, `cafe_id`, `user_id`, `makanan_id`, `minum_id`, `created_at`, `updated_at`) VALUES
-(132, 'ERI2656C0C76615', 2, 11, 13, NULL, 12, '2023-06-24 07:54:54', '2023-06-24 07:55:13'),
-(133, 'ERI2656C0C76615', 2, 11, 13, NULL, 5, '2023-06-24 07:55:03', '2023-06-24 07:55:13'),
-(134, 'ERI544273FE7688', 2, 11, 18, NULL, 1, '2023-06-27 08:05:36', '2023-06-27 08:06:30'),
-(135, 'ERI544273FE7688', 1, 11, 18, 4, NULL, '2023-06-27 08:05:53', '2023-06-27 08:06:30');
+(132, 'ERI428D1FB6615', 1, 11, 13, NULL, 1, '2023-12-14 21:16:20', '2023-12-14 21:16:29'),
+(133, NULL, 1, 17, 2, NULL, 55, '2023-12-15 01:32:01', '2023-12-15 01:32:01'),
+(134, NULL, 1, 17, 2, NULL, 58, '2023-12-15 01:34:28', '2023-12-15 01:34:28');
 
 -- --------------------------------------------------------
 
@@ -82,8 +81,7 @@ INSERT INTO `bookings` (`id`, `tanggal_booking`, `jam_booking`, `opsi`, `user_id
 (21, '2023-06-19', '12:16:00', 'selesai', 5, 3, 11, '2023-06-18 22:16:27', '2023-06-21 19:33:38', 'Ath1903d5db', 'post-images/5OeLbCfqnUipmtcyz06Z7reBKwQNt1Q1UGtzMoS9.jpg'),
 (22, '2023-06-20', '19:00:00', 'tunggu', 6, 9, 13, '2023-06-19 02:34:16', '2023-06-19 02:34:16', 'Bel97999594', NULL),
 (25, '2023-06-23', '13:30:00', 'selesai', 13, 12, 16, '2023-06-21 07:55:14', '2023-06-21 08:01:52', 'BOOERI9642FB0A6615', 'post-images/c20Qdtd63j4mIz7SBvpHKmKR2WG4IlS4zfGvMAfR.jpg'),
-(26, '2023-06-23', '20:20:00', 'selesai', 13, 3, 11, '2023-06-22 00:17:55', '2023-06-22 00:20:19', 'BOOERI518767096615', 'post-images/IPiJ5tixrRUwuqjcWOJJB1HrL9ZTZqC2jEqYby17.png'),
-(29, '2023-06-30', '13:30:00', 'selesai', 18, 3, 11, '2023-06-27 08:08:11', '2023-06-27 08:11:31', 'BOOERI443021D77688', 'post-images/UknhH2sAUl0rUhGC7YDkI63POvY0lmglwIZpQQlC.png');
+(26, '2023-06-23', '20:20:00', 'selesai', 13, 3, 11, '2023-06-22 00:17:55', '2023-06-22 00:20:19', 'BOOERI518767096615', 'post-images/IPiJ5tixrRUwuqjcWOJJB1HrL9ZTZqC2jEqYby17.png');
 
 -- --------------------------------------------------------
 
@@ -128,9 +126,7 @@ INSERT INTO `cafes` (`id`, `nama_cafe`, `gambar_logo`, `gambar_profil`, `alamat`
 (14, 'Bento Kopi Tegal', 'post-images/t8OaPbypV24dhDvEEkKoFvt7mv8146QSX3XFyS4V.jpg', 'post-images/TW1BznrO5ITxbY6bLMSQ8zNc9QTWbWaYGHyFghUK.jpg', 'Jl. Gatot Subroto No.18-116, Debong Kulon, Kec. Tegal Sel., Kota Tegal, Jawa Tengah 52133', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.25012247092!2d109.1212151!3d-6.8831131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9a6374cdcbb%3A0xa63aedc99e9e5ffd!2sBento%20Kopi%20Tegal!5e0!3m2!1sid!2sid!4v1686456665149!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '<div>Bento Kopi merupakan tempat makan kekinian yang cukup populer dan sudah tidak asing ditelinga, karena sudah memiliki cabang diberbagai kota di Indonesia. Memilki lahan yang cukup luas, nyaman dan fasilitasnya cukup memadai. Menyuguhkan pesona alam sekitar yang menawan, karena tempatnya dibangun di area persawahan. Tentu pengunjung akan disuguhi view hamparan persawahan hijau yang begitu indah dan ada jalur kereta api, sehingga sesekali kamu bisa melihat kereta api yang lewat.<br><br></div><div>Di Bento Kopi ini kamu dapat menikmati kopi atau sekedar bersantai sembari menikmati live musik, selain itu kamu juga dapat bermain games yang dapat dipinjam di kasir. Selain pesona alam yang memanjakan, Bento Kopi menawarkan 3 pilihan area yaitu indoor, semi indoor dan outdoor. Menu yang ditawarkan pun cukup beragam dengan harga yang cukup terjangkau.<br><br></div>', '087665477252', 6, '2023-06-12 20:54:47', '2023-06-12 21:50:52', 'Kota Tegal', 'tegal selatan', '087665477252', NULL, 'https://www.instagram.com/bentokopiindonesia/', 'Mandiri', '018364787429487', 'Dana', '087665477252', 'bento-kopi-tegal-da451c', '', 'konfirmasi'),
 (15, 'Yotee Coffee & Eatery', 'post-images/ss8QSYlJBnWvxl9QguWVSuVGI957LFljOue0K97d.jpg', 'post-images/hnPhqzNEdVpCnSaMsc5VBlMeHGO7yWZOhKBHzQyA.jpg', 'Jl. Werkudoro, Pengabean, Slerok, Kec. Tegal Timur, Kota Tegal, Jawa Tengah 52192', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.14970203016!2d109.1408409!3d-6.8861207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9c9d1ae38df%3A0x7c1dc845b36688e5!2sYotee%20Coffee!5e0!3m2!1sid!2sid!4v1686475509266!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '<div>Yotee Coffee &amp; Eatery adalah café&nbsp; yang berlokasi di Jalan Werkudoro, Pengabean, Slerok, Kota Tegal. Cafe ini baru dibuka sekitar akhir Oktober 2021. Café ini menyajikan konsep Jepang yang sangat kental. Yotee Coffe &amp; Eatery ini juga memiliki bangunan yang didominasi warna putih, sehingga sangat cocok untuk tempat hangout dengan teman atau keluarga, juga bisa dimanfaatkan untuk spot foto kekinian.</div><div>Dengan Suasana yang asyik, nyaman, dan bersih . Tempat yang pas untuk kumpul bareng dengan teman ataupun keluarga, Bahkan meeting sekalipun. Dengan fasilitas yang memadai ada no Smoking area dan , Smoking Area yang membuat pengunjung semakin nyaman.&nbsp;</div><div>Berbagai varian menu minuman disajikan mulai dari susu, teh, kopi hingga mojito. Ada juga beberapa pilihan makanan seperti jajanan, nasi, dan olahan roti.<br><br></div>', '085848304490', 7, '2023-06-12 21:47:32', '2023-06-12 21:51:13', 'Kota Tegal', 'tegal timur', '085340000111', NULL, 'https://www.instagram.com/yoteecoffee/?hl=id', 'BRI', '0001-01-011822-53-7', 'Shopeepay', '085340000111', 'yotee-coffee-&-eatery-612a26', '', 'konfirmasi'),
 (16, 'Kopi dari Hati', 'post-images/QP9VrZFDtcGmlMKYbD47FnMwLkFpuzN4yy2PEIiW.jpg', 'post-images/saOm8O63ruGGJdcug6QiguVPlr3sLbjMHRZVvDwh.jpg', 'Jl. Kapten Sudibyo No.129, Randugunting, Kec. Tegal Sel., Kota Tegal, Jawa Tengah 52133', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7922.215389959504!2d109.11841036977535!3d-6.877699100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb96bcfc09f93%3A0xcdcb54bd307b2b4!2sKopi%20Dari%20Hati%20Tegal!5e0!3m2!1sid!2sid!4v1686481217235!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '<div>KOPI DARI HATI merupakan sebuah Cafe yang berada di Tegal. Cafe ini menyajikan berbagai menu kopi, jajanan &amp; roti yang dibanderol dengan harga yang murah dan bersahabat dengan kantong anda.</div>', '087785572258', 8, '2023-06-12 21:49:57', '2023-06-12 22:00:11', 'Kota Tegal', 'tegal timur', '087785572258', NULL, 'https://www.instagram.com/kopidarihatitegal.official/?igshid=MzRlODBiNWFlZA%3D%3D', NULL, NULL, 'GoPay', '087785572258', 'kopi-dari-hati-8c5c6b', '', 'konfirmasi'),
-(17, 'Kalih Coffee Tea and Spaces', 'post-images/m1ztmES8Cdpgq9lHyp4X38BZ1u4YqIIOnPkDeqh1.jpg', 'post-images/1hxVMKDTgmFYGmv2PFRmcDoIygiQskQhIEVSBBsV.jpg', 'Jl. Raya Pacul No.18B, Sibata, Mejasem Bar., Kec. Kramat, Kabupaten Tegal, Jawa Tengah 52181', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.015630407963!2d109.1503639!3d-6.8887307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9bb9271f517%3A0x7a5c05dcd6929146!2sKalih%20Coffee%20Tea%20and%20Spaces%20Tegal!5e0!3m2!1sid!2sid!4v1686633758071!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '<div>Kalih Coffee Tea and Spaces adalah sebuah kafe yang menawarkan pengalaman yang nyaman dan unik di dalamnya. Dengan tiga ruangan indoor yang nyaman, kafe ini memberikan suasana yang ideal untuk bersantai, bekerja, atau bertemu dengan teman-teman.</div>', '087768662331', 9, '2023-06-12 22:12:27', '2023-06-12 22:26:19', 'Kab Tegal', 'kramat', '087665477254', NULL, 'https://www.instagram.com/kalih.coffee/', 'BNI', '002993881899', 'DANA', '087665477254', 'kalih-coffee-tea-and-spaces-1420a5', '', 'konfirmasi'),
-(21, 'Anak Cafe', NULL, NULL, 'Tegal', NULL, NULL, '085642653757', 13, '2023-06-24 07:21:06', '2023-06-24 07:21:06', 'Kota Tegal', 'tegal selatan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'anak-cafe-4512a7', 'ANA8224DE156615', 'tunggu'),
-(22, 'Eri Cafe', NULL, NULL, 'tegal', NULL, NULL, '085646533455', 18, '2023-06-27 08:12:55', '2023-06-27 08:13:55', 'Kab Tegal', 'talang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'eri-cafe-e64637', 'ERI3874E6467688', 'konfirmasi');
+(17, 'Kalih Coffee Tea and Spaces', 'post-images/m1ztmES8Cdpgq9lHyp4X38BZ1u4YqIIOnPkDeqh1.jpg', 'post-images/1hxVMKDTgmFYGmv2PFRmcDoIygiQskQhIEVSBBsV.jpg', 'Jl. Raya Pacul No.18B, Sibata, Mejasem Bar., Kec. Kramat, Kabupaten Tegal, Jawa Tengah 52181', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.015630407963!2d109.1503639!3d-6.8887307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9bb9271f517%3A0x7a5c05dcd6929146!2sKalih%20Coffee%20Tea%20and%20Spaces%20Tegal!5e0!3m2!1sid!2sid!4v1686633758071!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', '<div>Kalih Coffee Tea and Spaces adalah sebuah kafe yang menawarkan pengalaman yang nyaman dan unik di dalamnya. Dengan tiga ruangan indoor yang nyaman, kafe ini memberikan suasana yang ideal untuk bersantai, bekerja, atau bertemu dengan teman-teman.</div>', '087768662331', 9, '2023-06-12 22:12:27', '2023-06-12 22:26:19', 'Kab Tegal', 'kramat', '087665477254', NULL, 'https://www.instagram.com/kalih.coffee/', 'BNI', '002993881899', 'DANA', '087665477254', 'kalih-coffee-tea-and-spaces-1420a5', '', 'konfirmasi');
 
 --
 -- Triggers `cafes`
@@ -304,8 +300,7 @@ INSERT INTO `fotos` (`id`, `gambar`, `cafe_id`, `created_at`, `updated_at`) VALU
 (56, 'post-images/ALk37IyNPHidQqHqkGGaNeMPzfmtrypnj9iReef3.jpg', 17, '2023-06-12 22:46:58', '2023-06-12 22:46:58'),
 (59, 'post-images/lAdqTEkhGbfiWQFhPFy2tDjBsOP3XBdTGifPZImz.jpg', 17, '2023-06-12 22:47:28', '2023-06-12 22:47:28'),
 (60, 'post-images/fvPmYZxp89qS4icm5xqZgL9i4LArZUaERY2Zij2h.jpg', 17, '2023-06-12 22:47:40', '2023-06-12 22:47:40'),
-(61, 'post-images/HVQhxcmjw6Eit3lHJ4SiFIz1eM9zUIRLTUYoYcwd.jpg', 17, '2023-06-12 22:47:52', '2023-06-12 22:47:52'),
-(63, 'post-images/h0iTAbhXXRnbpU1dh8Xym4JNI94ywUL9Tij4k5wf.jpg', 22, '2023-06-27 08:22:18', '2023-06-27 08:22:18');
+(61, 'post-images/HVQhxcmjw6Eit3lHJ4SiFIz1eM9zUIRLTUYoYcwd.jpg', 17, '2023-06-12 22:47:52', '2023-06-12 22:47:52');
 
 -- --------------------------------------------------------
 
@@ -347,9 +342,7 @@ INSERT INTO `jadwals` (`id`, `senin_buka`, `senin_tutup`, `selasa_buka`, `selasa
 (14, '09:00:00', '22:00:00', '09:00:00', '22:00:00', '09:00:00', '22:00:00', '09:00:00', '22:00:00', '09:00:00', '22:00:00', '09:00:00', '22:00:00', '09:00:00', '22:00:00', 'buka', 14, NULL, '2023-06-12 21:51:54'),
 (15, '10:00:00', '22:00:00', '10:00:00', '22:00:00', '10:00:00', '22:00:00', '10:00:00', '22:00:00', '10:00:00', '22:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', 'buka', 15, NULL, '2023-06-12 22:40:22'),
 (16, '10:00:00', '23:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', '10:00:00', '23:00:00', 'buka', 16, NULL, '2023-06-12 22:02:05'),
-(17, '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', 'buka', 17, NULL, '2023-06-12 22:24:48'),
-(25, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'buka', 21, NULL, NULL),
-(26, '19:30:00', '16:30:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'buka', 22, NULL, '2023-06-27 08:15:06');
+(17, '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', '08:00:00', '23:00:00', 'buka', 17, NULL, '2023-06-12 22:24:48');
 
 -- --------------------------------------------------------
 
@@ -619,8 +612,7 @@ INSERT INTO `ulasans` (`id`, `rating`, `ulasan`, `user_id`, `cafe_id`, `created_
 (12, '5', 'Kopinya enak', 6, 16, '2023-06-18 20:27:58', '2023-06-18 20:27:58'),
 (13, '4', 'tempatnya nyaman, makanannya lumayan enak', 12, 14, '2023-06-18 21:38:04', '2023-06-18 21:38:04'),
 (14, '5', 'Tempatnya bagus dan nyaman', 13, 16, '2023-06-21 08:02:59', '2023-06-21 08:02:59'),
-(15, '4', 'Menunya enak', 13, 11, '2023-06-22 00:20:57', '2023-06-22 00:20:57'),
-(17, '4', 'cafe lumayan nyaman', 18, 15, '2023-06-27 08:27:13', '2023-06-27 08:27:13');
+(15, '4', 'Menunya enak', 13, 11, '2023-06-22 00:20:57', '2023-06-22 00:20:57');
 
 -- --------------------------------------------------------
 
@@ -647,7 +639,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `no_telepon`, `is_admin`) VALUES
 (1, 'Tani', 'tiani@gmail.com', NULL, '$2y$10$S9prZ0h597AFOem9uPh8ROzkF4mwyjre0NnLguRDS7GHYOV2qM9tq', NULL, '2023-06-08 21:04:19', '2023-06-08 21:04:19', '081234567890', 'bukan_admin'),
-(2, 'Eri hidayat', 'erihidayat549@gmail.com', NULL, '$2y$10$pfzePFx2jNNEW8B8sP/tCOtXV1EiQjNk.ST6//dEJ.6Kwf1Zxzp2W', 'YcodgWggHJo5xlaR0DoI6RlpLoP0fOql02ZX5naWhadBNEqudSezMrqry526', '2023-06-08 23:21:18', '2023-06-19 01:55:35', '085647715796', 'admin'),
+(2, 'Eri hidayat', 'erihidayat549@gmail.com', NULL, '$2y$10$pfzePFx2jNNEW8B8sP/tCOtXV1EiQjNk.ST6//dEJ.6Kwf1Zxzp2W', 'nY2sfFP8eJmjVSZXaWc9BgaIoJvgMTSWhBCyoGZtUu0GwROrnS2ToIvO6Jps', '2023-06-08 23:21:18', '2023-06-19 01:55:35', '085647715796', 'admin'),
 (3, 'Aminatun Khoiriyyah', 'apk@gmail.com', NULL, '$2y$10$Ht5b10CWdVmtHFItkRzHF.I1Hjhh9A0WoGHwwhmnAL6Gl.rVd/OgS', NULL, '2023-06-09 21:28:43', '2023-06-09 21:28:43', '082223125118', 'bukan_admin'),
 (4, 'Aminatun Khoiriyyah', 'amntnkhrryh@gmail.com', NULL, '$2y$10$m/2MEbnpm.yfyhwZ05Ix8OMQ20ja7lyhA8.94ohoEVxo68uZnEUE2', NULL, '2023-06-12 20:11:41', '2023-06-12 20:11:41', '082223125118', 'admin'),
 (5, 'Athariq Byan', 'byan@gmail.com', NULL, '$2y$10$9eP50FMA.evNWDmZwv4CK.IH7LTvwwxb0fIzJaa7xBG6KfhryLDsK', 'KorGwqNYyyODPJEKP38OybTjHZ1oyp4BJApLWnh9vUdEC6H2CYg1urHkfDnZ', '2023-06-12 20:16:35', '2023-06-12 20:16:35', '087848359784', 'admin'),
@@ -658,12 +650,11 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (10, 'reiju', 'ai@gmail.com', NULL, '$2y$10$xmvd8tMYh72B19DhzFuCqOEujIWhhxREfuCD1cOoV0UNJI.zTMinK', NULL, '2023-06-18 20:23:54', '2023-06-18 20:23:54', '082222222222', 'bukan_admin'),
 (11, 'syeeta', 'syeeta@gmail.com', NULL, '$2y$10$TTjcyeD79pURbNOzmer1pelr/WL5fX.fKoYNvv2LQtZFLT6CqwSh6', NULL, '2023-06-18 21:30:35', '2023-06-18 22:21:19', '085566778899', 'admin'),
 (12, 'byonce', 'is@gmail.com', NULL, '$2y$10$y3Q7CUWEr3CzPinWK.0Lq.RAIj9z85lFZgXGvK7tBFuaR1L.f2If.', NULL, '2023-06-18 21:37:03', '2023-06-18 21:41:38', '089999999999', 'bukan_admin'),
-(13, 'Eri hidaya', 'erihidayat17@gmail.com', NULL, '$2y$10$kmrXAtJl.OkULI0nl1vo.O4PCZxE4E4uv2extzCmH76AB3BuDsMfK', 'AaBlgfzW4XtKE7iFev1CkHAX3DLsfchDqUrrodEw7VuBifWtbLDK0TjvlKl3', '2023-06-21 07:49:19', '2023-06-21 07:49:19', '08567626615', 'bukan_admin'),
+(13, 'Eri hidaya', 'erihidayat17@gmail.com', NULL, '$2y$10$kmrXAtJl.OkULI0nl1vo.O4PCZxE4E4uv2extzCmH76AB3BuDsMfK', 't52hwqeugsaynlf9ITX1ArsIsZVkvGKCKfTzSHZOdgLuQeoK4mOjP6mjtinn', '2023-06-21 07:49:19', '2023-06-21 07:49:19', '08567626615', 'bukan_admin'),
 (14, 'erihidayat', 'erihidayat@gmail.com', NULL, '$2y$10$WU5C14DUb.oP/LXUul1JTO2ul//E9yd/K3QHoUenKNSEYMAIg8T.u', NULL, '2023-06-22 00:13:50', '2023-06-22 00:13:50', '08634782365', 'bukan_admin'),
 (15, 'Eri hidayat', 'eri12@gmail.com', NULL, '$2y$10$b3ymYPL6d5HcMiQoH5gkmO7HQjOsu7E.HZTI67h9oaN0YaAxVfTt2', NULL, '2023-06-22 00:28:46', '2023-06-22 00:28:46', '087345376', 'bukan_admin'),
 (16, 'wimas', 'wimas@yahoo.com', NULL, '$2y$10$.gJ64OZ0OO.VoJtv6MpoPuNwVqqQj0IqshaKjkcMkDGuwSXESu8DW', NULL, '2023-06-22 00:30:13', '2023-06-22 00:30:13', '08347567', 'bukan_admin'),
-(17, 'Admin Cafe Journey', 'erihidayat18@gmail.com', NULL, '$2y$10$Z3Nu25rM.JWOjke1W023n.CJRfcTFNn.fbjsHbop1a/9PJgQYcVIS', NULL, '2023-06-24 05:08:39', '2023-06-24 05:08:39', '085647715796', 'admin_web'),
-(18, 'Eri Hidayat', 'erihidayat90@gmail.com', NULL, '$2y$10$2VkMjQzOWZSR8qCMaVJ11.wwUX2jocD4xrw.x9gsIqelFYrP5o0T6', NULL, '2023-06-27 08:05:16', '2023-06-27 08:05:16', '083556757688', 'admin');
+(17, 'Admin Cafe Journey', 'erihidayat18@gmail.com', NULL, '$2y$10$Z3Nu25rM.JWOjke1W023n.CJRfcTFNn.fbjsHbop1a/9PJgQYcVIS', NULL, '2023-06-24 05:08:39', '2023-06-24 05:08:39', '085647715796', 'admin_web');
 
 -- --------------------------------------------------------
 
@@ -818,19 +809,19 @@ ALTER TABLE `vips`
 -- AUTO_INCREMENT for table `belis`
 --
 ALTER TABLE `belis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `cafes`
 --
 ALTER TABLE `cafes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -848,13 +839,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `jadwals`
 --
 ALTER TABLE `jadwals`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `makanans`
@@ -884,13 +875,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `ulasans`
 --
 ALTER TABLE `ulasans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `vips`
