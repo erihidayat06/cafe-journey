@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Beli;
 use App\Models\Cafe;
 use App\Models\User;
-use App\Models\Beli;
 use App\Models\Jadwal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +10,8 @@ use App\Http\Controllers\VipController;
 use App\Http\Controllers\BeliController;
 use App\Http\Controllers\CafeController;
 use App\Http\Controllers\FotoController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JadwalController;
@@ -18,16 +20,15 @@ use App\Http\Controllers\RatingController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AnalitikController;
 use App\Http\Controllers\BuatCafeController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LaporanPDFController;
 use App\Http\Controllers\ProfilCafeController;
 use App\Http\Controllers\DashboardBeliController;
+use App\Http\Controllers\AdminLanggananController;
 use App\Http\Controllers\DashboardMinumController;
 use App\Http\Controllers\DashboardBookingController;
-use App\Http\Controllers\LaporanPDFController;
-use App\Http\Controllers\AnalitikController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,18 +41,18 @@ use App\Http\Controllers\HomeController;
 |
 */
 
- // Hapus Pesanan
+// Hapus Pesanan
 $pesanans = Beli::get();
 foreach ($pesanans as $pesanan) {
-    if (date('Y-m-d', strtotime('+10 days', strtotime( $pesanan->updated_at ))) <= date('Y-m-d') and $pesanan->no_pesanan != null) {
+    if (date('Y-m-d', strtotime('+10 days', strtotime($pesanan->updated_at))) <= date('Y-m-d') and $pesanan->no_pesanan != null) {
         Beli::where('no_pesanan', $pesanan->no_pesanan)->delete();
     }
 }
 
- // Hapus Cafe
+// Hapus Cafe
 $cafes = Cafe::get();
 foreach ($cafes as $cafe) {
-    if (date('Y-m-d H:i:s', strtotime('+10 days', strtotime( $cafe->updated_at ))) <= date('Y-m-d H:i:s') and $cafe->konfirmasi == 'tunggu') {
+    if (date('Y-m-d H:i:s', strtotime('+10 days', strtotime($cafe->updated_at))) <= date('Y-m-d H:i:s') and $cafe->konfirmasi == 'tunggu') {
 
         Cafe::where('id', $cafe->id)->delete();
     }
@@ -116,11 +117,16 @@ Route::get('/dashboard/beli/', [DashboardBeliController::class, 'index'])->middl
 Route::get('/dashboard/analis', [AnalitikController::class, 'index'])->middleware('auth')->middleware('admin');
 
 // Admin
-Route::get('admin', [AdminController::class,'index']);
-Route::get('admin/daftar-cafe/semua', [AdminController::class,'daftarCafe'])->middleware('auth')->middleware('admin_web');;
-Route::get('admin/daftar-cafe/tunggu', [AdminController::class,'daftarCafeTunggu'])->middleware('auth')->middleware('admin_web');;
-Route::get('admin/daftar-cafe/konfir', [AdminController::class,'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');;
-Route::put('admin/daftar-cafe/{cafe:id}', [AdminController::class,'konfirmasi'])->middleware('auth')->middleware('admin_web');;
+Route::get('admin', [AdminController::class, 'index']);
+Route::get('admin/daftar-cafe/semua', [AdminController::class, 'daftarCafe'])->middleware('auth')->middleware('admin_web');
+Route::get('admin/daftar-cafe/tunggu', [AdminController::class, 'daftarCafeTunggu'])->middleware('auth')->middleware('admin_web');
+Route::get('admin/daftar-cafe/konfir', [AdminController::class, 'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');
+Route::put('admin/daftar-cafe/{cafe:id}', [AdminController::class, 'konfirmasi'])->middleware('auth')->middleware('admin_web');
+
+Route::get('admin/langganan', [AdminLanggananController::class, 'index'])->middleware('auth')->middleware('admin_web');
+Route::get('admin/langganan/satu-minggu', [AdminLanggananController::class, 'satuMinggu'])->middleware('auth')->middleware('admin_web');
+Route::get('admin/langganan/konfir', [AdminLanggananController::class, 'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');
+Route::put('admin/langganan/{cafe:id}', [AdminLanggananController::class, 'tambahWaktu'])->middleware('auth')->middleware('admin_web');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -4,7 +4,7 @@
          &copy; Copyright <strong><span>Cafe Journey</span></strong>. All Rights Reserved
      </div>
      <div class="credits">
-         Designed by <a href="https://bootstrapmade.com/">Kelompok 2</a>
+         Designed by <a href="">Cafe Journey</a>
      </div>
  </footer><!-- End Footer -->
 
