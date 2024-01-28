@@ -13,7 +13,6 @@ use App\Http\Controllers\FotoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RatingController;
@@ -22,7 +21,6 @@ use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AnalitikController;
 use App\Http\Controllers\BuatCafeController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LaporanPDFController;
 use App\Http\Controllers\ProfilCafeController;
 use App\Http\Controllers\DashboardBeliController;
@@ -123,11 +121,13 @@ Route::get('admin/daftar-cafe/tunggu', [AdminController::class, 'daftarCafeTungg
 Route::get('admin/daftar-cafe/konfir', [AdminController::class, 'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');
 Route::put('admin/daftar-cafe/{cafe:id}', [AdminController::class, 'konfirmasi'])->middleware('auth')->middleware('admin_web');
 
+// Langganan
 Route::get('admin/langganan', [AdminLanggananController::class, 'index'])->middleware('auth')->middleware('admin_web');
 Route::get('admin/langganan/satu-minggu', [AdminLanggananController::class, 'satuMinggu'])->middleware('auth')->middleware('admin_web');
 Route::get('admin/langganan/konfir', [AdminLanggananController::class, 'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');
 Route::put('admin/langganan/{cafe:id}', [AdminLanggananController::class, 'tambahWaktu'])->middleware('auth')->middleware('admin_web');
 
+// profil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
