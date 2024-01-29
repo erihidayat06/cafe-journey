@@ -3,7 +3,7 @@
     <h5 class="mb-0">Event/Promo</h5>
 </div>
 
-<div id="carouselExampleInterval" class="carousel rounded-sm slide mb-4 shadow-sm" data-bs-ride="carousel">
+<div id="carouselExampleInterval" class="carousel rounded-sm slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner rounded-2">
 
         @foreach ($events->chunk(4) as $key => $eventChunk)
@@ -11,17 +11,17 @@
                 <div class="row">
                     @foreach ($eventChunk as $event)
                         <div class="col-md-3">
-                            <div style="background-color: #fff" class="rounded-sm mb-3">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#event{{ $event->id }}">
-                                    <img src="{{ asset('storage/' . $event->image) }}"
+                            <div class="rounded-sm mb-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#eventModal{{ $event->id }}">
+                                    <img src="{{ asset('storage/' . $event->gambar) }}"
                                         class="d-block rounded-sm w-100 object-fit-cover" alt="Event Image">
                                 </a>
                             </div>
                         </div>
+                        @include('cafe.modal.modalEvent', ['eventId' => $event->id])
                     @endforeach
                 </div>
             </div>
-            @include('cafe.modal.modalEvent')
         @endforeach
 
     </div>
