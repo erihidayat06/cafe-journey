@@ -39,7 +39,20 @@ class EventController extends Controller
         ]);
 
         if ($request->file('gambar')) {
-            $validasiData['gambar'] = $request->file('gambar')->store('post-images');
+            
+            // Nama File
+            $fileName = pathinfo($request->file('gambar')->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // Ekstensi File
+            $extension = $request->file('gambar')->getClientOriginalExtension();
+
+            // Nama File Unik
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
+
+            // Upload Gambar
+            $path = $request->file('gambar')->storeAs('public/post-images', $fileNameToStore);
+
+            $validasiData['gambar'] = $path;
         };
 
         Event::create($validasiData);
@@ -47,13 +60,6 @@ class EventController extends Controller
         return redirect('/dashboard/event')->with('success', 'Event Berhasil di Tambah');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Event $event)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
