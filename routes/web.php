@@ -65,8 +65,7 @@ Route::get('/cafe/menu/{cafe:slug}', [CafeController::class, 'menu']);
 Route::post('/cafe/menu/{cafe:slug}', [CafeController::class, 'menu']);
 Route::get('/cafe/booking/{cafe:slug}', [CafeController::class, 'booking']);
 Route::get('/cafe/ulasan/{cafe:slug}', [CafeController::class, 'ulasan']);
-
-
+Route::get('/cafe/jadwal/{cafe:slug}', [CafeController::class, 'jadwal']);
 
 // Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 // Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
