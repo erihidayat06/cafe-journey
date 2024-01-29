@@ -209,7 +209,7 @@
     </div>
 
     <nav class="navbar">
-        <div class="container bg-white text-main rounded-sm shadow-sm p-2 mt-2">
+        <div class="container bg-white text-main rounded-sm shadow-sm pt-3 pb-2 mt-2">
             <div class="text-center" id="navbarNav">
                 <ul class="nav ">
                     <li class="nav-item text-main">
@@ -227,6 +227,10 @@
                     <li class="nav-item">
                         <a style="color: #c1745f; {{ Request::is("cafe/booking/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/booking/{{ $cafes->slug }}">Reservasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color: #c1745f; {{ Request::is("cafe/jadwal/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                            class="nav-link" href="/cafe/jadwal/{{ $cafes->slug }}">Jadwal</a>
                     </li>
                 </ul>
             </div>

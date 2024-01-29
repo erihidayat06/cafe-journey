@@ -23,13 +23,13 @@ class CafeController extends Controller
             $ulasan = 'p';
         };
 
-        $ulasans = Ulasan::where('cafe_id',$cafe->id)->latest()->get()->take(2);
+        $ulasans = Ulasan::where('cafe_id', $cafe->id)->latest()->get()->take(2);
         $semua = $cafe->ulasan;
         $events = $cafe->event;
 
-         if($cafe->konfirmasi === 'tunggu'){
-                return redirect('/')->with('error','Cafe Tidak di Temukan');
-            }
+        if ($cafe->konfirmasi === 'tunggu') {
+            return redirect('/')->with('error', 'Cafe Tidak di Temukan');
+        }
         return view('cafe.index', [
             'cafes' => $cafe,
             'ulasan' => $ulasan,
@@ -48,9 +48,9 @@ class CafeController extends Controller
 
         $semua = $cafe->ulasan;
 
-        if($cafe->konfirmasi === 'tunggu'){
-                return redirect('/')->with('error','Cafe Tidak di Temukan');
-            }
+        if ($cafe->konfirmasi === 'tunggu') {
+            return redirect('/')->with('error', 'Cafe Tidak di Temukan');
+        }
         return view('cafe.menu', [
             'cafe' => $cafe,
             'cafes' => $cafe,
@@ -64,9 +64,9 @@ class CafeController extends Controller
     public function booking(Cafe $cafe)
     {
 
-        if($cafe->konfirmasi === 'tunggu'){
-                return redirect('/')->with('error','Cafe Tidak di Temukan');
-            }
+        if ($cafe->konfirmasi === 'tunggu') {
+            return redirect('/')->with('error', 'Cafe Tidak di Temukan');
+        }
         return view('cafe.booking', [
             'cafe' => $cafe,
             'cafes' => $cafe,
@@ -79,16 +79,30 @@ class CafeController extends Controller
     {
         $ulasans = $cafe->ulasan;
 
-        if($cafe->konfirmasi === 'tunggu'){
-                return redirect('/')->with('error','Cafe Tidak di Temukan');
-            }
+        if ($cafe->konfirmasi === 'tunggu') {
+            return redirect('/')->with('error', 'Cafe Tidak di Temukan');
+        }
         return view('cafe.ulasan', [
+            'cafe'      => $cafe,
+            'cafes'     => $cafe,
+            'bookings'  => $cafe->vip,
+            'ulasans'   => $ulasans,
+            'semua'     =>  $cafe->ulasan
+        ]);
+    }
+
+    public function jadwal(Cafe $cafe)
+    {
+
+        if ($cafe->konfirmasi === 'tunggu') {
+            return redirect('/')->with('error', 'Cafe Tidak di Temukan');
+        }
+        return view('cafe.jadwal', [
             'cafe' => $cafe,
             'cafes' => $cafe,
             'bookings' => $cafe->vip,
-            'ulasans' => $ulasans,
-            'semua' =>   $cafe->ulasan
-
+            'semua' =>  $cafe->ulasan,
+            'jadwal' => $cafe->jadwal
         ]);
     }
 }

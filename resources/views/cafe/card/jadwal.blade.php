@@ -1,5 +1,5 @@
 {{-- card Jadwal --}}
-<div class="card mt-2" id="jadwal">
+{{-- <div class="card mt-2" id="jadwal">
     <div class="card-body text-center">
         <h4 class="text-main">Jadwal</h4>
         <style>
@@ -97,4 +97,4 @@
             @endif
         </table>
     </div>
-</div>
+</div> --}}
