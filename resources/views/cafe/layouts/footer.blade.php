@@ -31,7 +31,7 @@
                 &copy; Copyright <strong><span>Cafe Journey</span></strong>. All Rights Reserved
             </div>
             <div class="credits text-white">
-                Designed by <a href="https://bootstrapmade.com/" class="text-white text-decoration-none">Kelompok 2</a>
+                Designed by <a href="" class="text-white text-decoration-none">Kelompok 2</a>
             </div>
         </div>
     </div>
