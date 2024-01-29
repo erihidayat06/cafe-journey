@@ -1,5 +1,5 @@
 {{-- Card Alamat --}}
-<div class="card mt-2">
+{{-- <div class="card mt-2">
     <div class="card-body text-center">
         <h4 class="text-main">Alamat</h4>
         <p>
@@ -25,5 +25,5 @@
             <p>{{ $cafes->alamat }} , Kec {{ $cafes->kecamatan }} , {{ $cafes->domisili }}</p>
         @endif
     </div>
-</div>
+</div> --}}
 {{-- End Card Alamat --}}
