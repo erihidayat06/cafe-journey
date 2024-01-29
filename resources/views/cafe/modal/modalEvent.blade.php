@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="event{{ $event->id }}" tabindex="-1" aria-labelledby="event{{ $event->id }}Label"
+<div class="modal fade" id="eventModal{{ $eventId }}" tabindex="-1" aria-labelledby="eventModal{{ $eventId }}"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
