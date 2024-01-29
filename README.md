@@ -52,8 +52,6 @@ Kamu bisa melihat demo website pada link berikut: [Cafe Journey](https://cafe-jo
 - [Unsplash](https://unsplash.com/)
 - [Formspree](https://formspree.io)
 
-Special Thanks to [Ahmad Saugi](https://github.com/zuramai/mazer) for the Admin Template
-
 ### 📜 LISENSI
 
 **This is open-sourced software licensed under the MIT license**
