@@ -22,7 +22,8 @@
     {{-- Poppins 700,800,900 --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700,800,900">
 
-    {{-- Roboto --}}
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Favicons -->
     <link href="/assets/img/favicon1.png" rel="icon">
