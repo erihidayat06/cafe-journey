@@ -141,7 +141,7 @@
 
             </div>
 
-            <form action="/dashboard/cafe/{{ $cafe->id }}" method="POST">
+            <form action="/dashboard/cafe/{{ $cafe->slug }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-sm btn-danger mt-2 ms-3 mb-3"

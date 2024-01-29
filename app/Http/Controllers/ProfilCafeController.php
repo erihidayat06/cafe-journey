@@ -135,8 +135,15 @@ class ProfilCafeController extends Controller
      */
     public function destroy(Cafe $cafe)
     {
-        Cafe::where('id', $cafe->id)->delete();
+        if (isset($cafe->gambar_logo)) {
+            Storage::delete($cafe->gambar_logo);
+        }
+        if (isset($cafe->gambar_profil)) {
+            Storage::delete($cafe->gambar_profil);
+        }
 
-        return redirect()->back()->with('error', 'Anda Sudah Bukan Dari Bagian Kami :(');
+        $cafe->delete();
+
+        return redirect('/')->with('error', 'Anda Sudah Bukan Dari Bagian Kami :(');
     }
 }
