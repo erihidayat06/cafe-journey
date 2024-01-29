@@ -1,17 +1,64 @@
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitwB6qpAfOVqWgKZbPz8Tn8ry1dA_7zRUlAW3Dt6Invl6gao8h6_OkMTgRxkQ2ycAzEsgMKAAgIJ8-q1h9D0OMP5AMyxgic4u-zEnPOgQYE3In4yJyLDSDuMwAugNCgzBKwg244efktN4Kldk9e-qFroKLUe9TrHTyymGc2s1m6E_mtqg8kokhzZMCyze1/s1920/Screenshot%202023-10-11%20095607.png" alt="" width="70%">
-<h1> Website Cafe Journey</h1> <br>
-Website yang dibuat untuk pencari cafe
+# Cafe Journey - Find, Order & Enjoy
 
-berikut fitur yang ada <br>
--pencari cafe <br>
--pesan menu <br>
--booking tempat <br>
--mendaftar cafe <br>
--pengelolaan cafe <br>
--penerimaan cafe <br>
-<br>
+| Home   |      Cafe List      |  Menu |
+|----------|:-------------:|------|
+|![image](https://github.com/erihidayat06/cafe-journey/assets/62005221/1c2af60a-3e1f-4f49-94bd-48ac753d43df) | ![image](https://github.com/erihidayat06/cafe-journey/assets/62005221/310ee5ac-d370-44c0-a3c8-7098bd878d04) | ![image](https://github.com/erihidayat06/cafe-journey/assets/62005221/52ae37eb-0fd3-4f1e-8bd2-13bc4687a91b)|
 
-<h3>Pengembangan Program </h3><br>
+> Webiste Cafe Journey adalah website yang menyediakan informasi tentang cafe yang ada di Tegal. Website ini juga menyediakan fitur untuk melakukan pemesanan makanan dan minuman di cafe.
+
+## 📺 Demo Website:
+Kamu bisa melihat demo website pada link berikut: [Cafe Journey](https://cafe-journey.herokuapp.com/)
+
+## 📚 Stack yang digunakan:
+-   [Laravel 10](https://laravel.com/docs/10.x)
+-   [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+-   [JQuery](https://jquery.com/)
+-   [Bootstrap Icons](https://icons.getbootstrap.com/)
+-   [Google Fonts](https://fonts.google.com/)
+
+## 📝 Persyaratan Penggunaan
+-   [PHP 8.1.0](https://www.php.net/downloads.php)
+-   [Composer](https://getcomposer.org/download/)
+-   [Web Browser](https://www.google.com/intl/id_id/chrome/)
+
+## 💡 Cara Instalasi
+-   Clone Repositori
+-   Copy .env.example
+-   Ubah Menjadi .env
+-   Jalankan Composer Update
+-   Jalankan `php artisan key:generate`
+-   Jalankan `php artisan storage:link`
+-   Jalankan `php artisan serve`
+-   Buka Web Browser dan ketikkan http://localhost:8000
+-   Selesai
+
+## 👨‍💻 Developer
+-   [Eri Hidayat]()
+-   [Andika Tulus Pangestu]()
+
+### ☕ Referensi, Lisensi Sumber Perangkat Lunak terbuka, Kontribusi
+
+- [Bootstrap](https://getbootstrap.com/)
+- [W3School](https://w3school.com)
+- [CSS Tricks](https://csstricks.com)
+- [Google Fonts](https://fonts.google.com)
+- [Freeicons](https://freeicons.io/icon-list/iconly-essential-icons)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+- [Colorhunt](https://colorhunt.co/)
+- [ezGIf - Image Convert](https://ezgif.com/png-to-webp/)
+- [Jsdelivr CDN](www.jsdelivr.com)
+- [Brandpalletes](https://brandpalettes.com)
+- [Iconfinder](https://www.iconfinder.com/iconsets/education-759)
+- [Unsplash](https://unsplash.com/)
+- [Formspree](https://formspree.io)
+
+Special Thanks to [Ahmad Saugi](https://github.com/zuramai/mazer) for the Admin Template
+
+### 📜 LISENSI
+
+**This is open-sourced software licensed under the MIT license**
+
+<!-- <h3>Pengembangan Program </h3><br>
 Menggunakan Laravel 10 <br>
 Menggunakan PHP 8.1.0 <br>
 <br>
@@ -23,4 +70,4 @@ Menggunakan PHP 8.1.0 <br>
 -   Jalankan Composer Update <br>
 -   Jalankan php artisan key:generate <br>
 -   Jalankan php artisan storage:link <br>
--   Jalankan php artisan serve<br>
+-   Jalankan php artisan serve<br> -->
