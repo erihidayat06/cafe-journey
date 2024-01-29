@@ -7,8 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cafe Journey</title>
 
-    {{-- Link Icon --}}
+    {{-- All Vendors --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+
+    {{-- Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    {{-- Poppins 700,800,900 --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700,800,900">
+
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- Favicons -->
     <link href="/assets/img/favicon1.png" rel="icon">
