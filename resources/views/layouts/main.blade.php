@@ -39,7 +39,7 @@
 
     @include('partials.navbar')
     @include('partials.textHeader')
-    <div class="container">
+    <div class="container my-5">
         @include('sweetalert::alert')
         @yield('container')
     </div>
