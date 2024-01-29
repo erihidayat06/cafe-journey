@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body text-center">
                 <img class="object-fit-contain rounded" class="mb-3" src="{{ asset('storage/' . $event->gambar) }}"
-                    width="100%" height="420px" alt="">
+                    width="40%" alt="">
             </div>
         </div>
     </div>

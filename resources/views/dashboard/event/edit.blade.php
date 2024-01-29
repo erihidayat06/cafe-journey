@@ -35,22 +35,27 @@
 
                     <div class="col-12">
                         <label for="gambar-event">Gambar</label><br>
-                        <label for="gambar-event"
-                            style="width: 300px; height:120px; border:1px solid black;object-fit:cover; border-radius:10px">
+                        <label for="gambar-event" style="cursor: pointer; border:1px solid black; border-radius:10px">
                             @if (isset($event->gambar))
+                                <div class="text-center text-minuman"
+                                    style=" width: 200px; height: 200px; position:absolute" id="masukan-gambar-event">
+                                    <i class="bi bi-cloud-download"></i><br>
+                                    Ubah foto
+                                </div>
+
                                 <img id="preview-event"
-                                    style="width:298.5px; height:119.5px; position:absolute;  border-radius:10px;"
+                                    style="width:200px; height:200px; object-fit:contain; border-radius:10px;"
                                     src="{{ asset('storage/' . $event->gambar) }}" alt="">
-                                <div class="text-minuman text-center fw-bold" id="masukan-gambar-event"><i
-                                        class="bi bi-cloud-download"></i><br> Edit Foto</div>
                             @else
-                                <div class="text-minuman text-center fw-bold" id="masukan-gambar-event"><i
-                                        class="bi bi-cloud-download"></i><br> Edit Foto</div>
+                                <div class="text-minuman text-center fw-bold" style="padding: 75px 60px"
+                                    id="masukan-gambar-event"><i class="bi bi-cloud-download"></i><br> Ubah Foto</div>
                                 <img id=""
-                                    style="width:298.5px; height:119.5px; object-fit:cover; border-radius:10px; display:none"
+                                    style="width:200px; height:200px; object-fit:cover; border-radius:10px; display:none"
                                     src="" alt="">
                             @endif
                         </label>
+                        <div class="text-danger" style="font-size: 13px">Ukuran foto yang disarankan : 1080 X 1080 px *
+                        </div>
                         <input type="hidden" value="{{ $event->gambar }}" name="gambar_lama">
                         <input type="file" class="form-control" hidden id="gambar-event" name="gambar"
                             onchange="previewGambar(this,'preview-event','masukan-gambar-event')">
