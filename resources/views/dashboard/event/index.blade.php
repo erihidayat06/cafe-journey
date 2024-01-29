@@ -12,7 +12,7 @@
                         <div class="col">
                             <a class="ms-3" href="#" data-bs-target="#foto{{ $event->id }}" data-bs-toggle="modal">
                                 <img src="{{ asset('storage/' . $event->gambar) }}" alt="..." width="120px"
-                                    height="50px" style="padding: 10px; object-fit: cover;">
+                                    height="120px" style="padding: 10px; object-fit: cover;">
                                 @include('dashboard.event.modalFoto')
 
                             </a>

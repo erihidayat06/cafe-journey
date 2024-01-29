@@ -12,7 +12,8 @@
                     @foreach ($eventChunk as $event)
                         <div class="col-md-3">
                             <div class="rounded-sm mb-3">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#eventModal{{ $event->id }}">
+                                <a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#eventModal{{ $event->id }}">
                                     <img src="{{ asset('storage/' . $event->gambar) }}"
                                         class="d-block rounded-sm w-100 object-fit-cover" alt="Event Image">
                                 </a>
@@ -25,13 +26,11 @@
         @endforeach
 
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-        data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-        data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>

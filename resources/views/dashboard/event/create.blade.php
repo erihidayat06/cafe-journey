@@ -32,14 +32,18 @@
 
                     <div class="col-12">
                         <label for="gambar-event">Gambar</label><br>
-                        <label for="gambar-event"
-                            style="width: 300px; height:120px; border:1px solid black; border-radius:10px">
-                            <div style="margin:30px 0px " class="text-center" id="masukan-gambar-event"><i
-                                    class="bi bi-cloud-download"></i><br> Masukan foto</div>
+                        <label for="gambar-event" style="cursor: pointer; border:1px solid black; border-radius:10px">
+
+                            <div class="text-center" style="padding: 75px 60px" id="masukan-gambar-event"><i
+                                    class="bi bi-cloud-download"></i><br>
+                                Masukan foto</div>
+
                             <img id="preview-event"
-                                style="width:298.5px; height:119.5px;object-fit:contain; border-radius:10px; display:none"
+                                style="width:200px; height:200px; object-fit:contain; border-radius:10px; display:none"
                                 src="" alt="">
                         </label>
+                        <div class="text-danger" style="font-size: 13px">Ukuran foto yang disarankan : 1080 X 1080 px *
+                        </div>
                         <input type="file" class="form-control" hidden id="gambar-event" name="gambar"
                             onchange="previewGambar(this,'preview-event','masukan-gambar-event')">
 
