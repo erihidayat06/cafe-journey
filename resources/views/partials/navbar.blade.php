@@ -9,13 +9,16 @@
             @auth
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Dashboard</a>
+                        <a class="nav-link" href="/">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bantuan</a>
+                        <a class="nav-link" href="/help">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link" href="/about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Kontak</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
@@ -68,7 +71,7 @@
                             <a class="dropdown-item" href="/beli">Pesanan</a>
                         </li>
                         @can('admin')
-                            <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Cafe</a></li>
+                            <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Kafe</a></li>
                         @endcan
                         @can('admin_web')
                             <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
@@ -82,7 +85,7 @@
                         <form id="logoutForm" action="/logout" method="POST">
                             @csrf
                             <li>
-                                <button class="dropdown-item" type="button" onclick="confirmLogout()">Logout</button>
+                                <button class="dropdown-item" type="button" onclick="confirmLogout()">Keluar</button>
                             </li>
                         </form>
                     </ul>
@@ -99,7 +102,7 @@
                         <a class="nav-link" href="/about">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Kontak</a>
+                        <a class="nav-link" href="/contact">Kontak</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
@@ -120,7 +123,7 @@
 
                 </div>
                 <div class="d-flex align-items-center">
-                    <a id="button-register" href="/register" class="btn active-button">Sign Up</a>
+                    <a id="button-register" href="/register" class="btn active-button">Daftar</a>
                     {{-- <a id="button-login" href="/login" class="btn btn-light deactive-button">Login</a> --}}
                 </div>
             @endauth

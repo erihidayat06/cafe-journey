@@ -13,11 +13,11 @@
                         </div>
                         <div class="footer-text">
                             <p>
-                                Cafe Journey is a website that provides information about cafes in Tegal. This website also provides features for ordering food and drinks at the cafe.
+                                Cafe Journey adalah sebuah website yang menyediakan informasi mengenai kafe-kafe yang ada di Tegal. Website ini juga menyediakan fitur untuk memesan makanan, minuman dan tempat di kafe tersebut.
                             </p>
                         </div>
                         <div class="footer-social-icon">
-                            <span>Follow us</span>
+                            <span>Ikuti Kami</span>
                             <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
                             <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
                             <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
@@ -27,22 +27,23 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Useful Links</h3>
+                            <h3>Tautan Penting</h3>
                         </div>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/help">Bantuan</a></li>
+                            <li><a href="/about">Tentang</a></li>
+                            <li><a href="/services">Layanan</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Subscribe</h3>
+                            <h3>Email Langganan</h3>
                         </div>
                         <div class="footer-text mb-25">
-                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            <p>Jangan lewatkan untuk berlangganan feed baru kami, silakan isi formulir di bawah ini.</p>
                         </div>
                         <div class="subscribe-form">
                             <form action="#">

@@ -118,18 +118,17 @@
                         <div class="col">
                             <div class="px-5 py-5 mt-5">
                                 <div class="px-2 py-2 align-middle">
-                                    <h4 class="hero-title"><span style="color: #cf9181">Find,</span> <span
-                                            style="color: #385a64">Order &</span> <span style="color: #ff755f;">Enjoy!</span>
+                                    <h4 class="hero-title"><span style="color: #cf9181">Cari,</span> <span
+                                            style="color: #385a64">Pesan <br> &</span> <span style="color: #ff755f;">Santai!</span>
                                     </h4>
-                                    <p class="hero-subtitle">Discover a world of delightful cafes in Tegal. Explore the finest
-                                        coffee spots curated
-                                        just for you. From cozy
-                                        corners to vibrant atmospheres, we've got your cafe needs covered.</p>
+                                    <p class="hero-subtitle">
+                                        Temukan dunia kafe yang menyenangkan di Tegal. Jelajahi tempat ngopi terbaik yang dicari khusus untuk Anda. Dari sudut yang nyaman hingga suasana yang semarak, kami memiliki semua kebutuhan kafe Anda.
+                                    </p>
                                 </div>
                                 <div class="px-2 py-2">
                                     <button type="button" class="hero-button shadow-sm">
                                         <i class="bi bi-search ps-2"></i>
-                                        <span class="px-2">Find Your Cafe</span>
+                                        <span class="px-2">Cari Kafe Sekarang</span>
                                     </button>
                                 </div>
                             </div>
@@ -145,9 +144,9 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center px-3 pt-4 mb-3">
                         <h5 class="fw-bold">
-                            Popular Cafe
+                            Kafe Terpopuler
                         </h5>
-                        <a href="/cafe" class="text-decoration-none">See All</a>
+                        <a href="/cafe" class="text-decoration-none">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -249,10 +248,10 @@
                         <div class="col">
                             <div class="d-flex justify-content-between align-items-center pt-4 mb-3">
                                 <h5 class="fw-bold text-danger">
-                                    Recommended Menu
+                                    Rekomendasi Menu
                                 </h5>
                                 <p>
-                                    List of recommended menus from various cafes in Tegal
+                                    Daftar menu yang direkomendasikan dari berbagai kafe di Tegal
                                 </p>
                             </div>
                         </div>
