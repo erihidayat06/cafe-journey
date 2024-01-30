@@ -90,16 +90,16 @@
             @else
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
+                        <a class="nav-link" href="/help">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="#">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contacts</a>
+                        <a class="nav-link" href="">Kontak</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
