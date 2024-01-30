@@ -15,7 +15,7 @@
                         <img src="{{ asset('assets/img/login.jpg') }}" alt="Logo Cafe Journey" class="img-fluid my-4 rounded shadow-sm" width="100">
                     </div>
                     <p>
-                        Cafe Journey : Find, Order, and Enjoy!
+                        Cafe Journey : Cari, Pesan dan Santai!
                     </p>
                     <p>
                         Selamat datang di Cafe Journey, tempat di mana perjalanan rasa dimulai. Kami adalah platform inovatif
