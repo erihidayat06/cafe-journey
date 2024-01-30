@@ -9,7 +9,7 @@
             @auth
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        <a class="nav-link" aria-current="page" href="/">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Bantuan</a>
@@ -29,6 +29,8 @@
                         </div>
                     </form>
                 </div>
+
+                {{-- Button Booking --}}
                 <a href="/booking" class="btn active-button position-relative ms-2">
                     <i class="bi bi-handbag-fill"></i> Pesanan
                     <span class="badge rounded-pill bg-light text-danger">
@@ -37,6 +39,16 @@
                         @endif
                     </span>
                 </a>
+
+                {{-- Kelola Kafe --}}
+                @can('bukan_admin')
+                <a href="/daftar-cafe" class="btn btn-kelola position-relative ms-2">
+                    <i class="bi bi-house-check-fill"></i> Daftarkan Cafe
+                </a>
+                @endcan
+
+                {{-- Dropdown User --}}
+
                 <li class="nav-item dropdown" style="list-style: none">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -60,6 +72,9 @@
                         @endcan
                         @can('admin_web')
                             <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
+                        @endcan
+                        @can('bukan_admin')
+                            <li><a class="dropdown-item" href="/daftar-cafe/">Daftarkan Cafe Anda</a></li>
                         @endcan
                         <li>
                             <hr class="dropdown-divider">

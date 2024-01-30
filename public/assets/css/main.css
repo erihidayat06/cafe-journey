@@ -712,3 +712,22 @@ ul {
     transition: background-color 0.3s ease;
     font-weight: bold;
 }
+
+.btn-kelola {
+    background-color: #695fc1 !important;
+    font-size: 1rem;
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    color: var(--body-color) !important;
+    border-radius: 30px !important;
+    border: solid 2px #695fc1 !important;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-ulasan:hover {
+    background-color: var(--body-color) !important;
+    color: #c1745f !important;
+    font-weight: bold;
+    border: solid 2px #c1745f !important;
+}
