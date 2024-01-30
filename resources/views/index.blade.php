@@ -126,7 +126,7 @@
                                     </p>
                                 </div>
                                 <div class="px-2 py-2">
-                                    <button type="button" class="hero-button shadow-sm">
+                                    <button type="button" class="hero-button shadow-sm" data-bs-toggle="modal" data-bs-target="#searchModal">
                                         <i class="bi bi-search ps-2"></i>
                                         <span class="px-2">Cari Kafe Sekarang</span>
                                     </button>
@@ -137,9 +137,8 @@
                 </div>
         </section>
 
+        {{-- Popular Cafe --}}
         <section id="cafe-list-container" class="rounded-sm p-3">
-
-            {{-- Section Title --}}
             <div class="row" id="cafe-list-title">
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center px-3 pt-4 mb-3">
@@ -305,16 +304,44 @@
         </section>
     @endauth
 
-    {{-- Bantuan --}}
-    {{-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <!-- Modal Pencarian -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 rounded-sm shadow-sm">
+                {{-- <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Cari Kafe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> --}}
+                <div class="modal-body">
+                    <h6>
+                        Cari Nama Kafe (BETA)
+                    </h6>
+                    <form action="/" id="searchForm" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari Nama Cafe [ENTER]"
+                                aria-label="Cari Nama Cafe [ENTER]" name="cari" value="{{ request('cari') }}">
+                            
+                            <!-- Pill Rekomendasi -->
+                            <div class="input-group-append ms-2">
+                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#rekomendasiPills" aria-expanded="false" aria-controls="rekomendasiPills">
+                                    Rekomendasi
+                                </button>
+                            </div>
+                        </div>
+    
+                        <!-- Pill Rekomendasi (hidden by default) -->
+                        <div class="collapse mt-2" id="rekomendasiPills">
+                            <div class="d-flex flex-wrap">
+                                <!-- Tambahkan pill-pill rekomendasi di sini -->
+                                <span class="badge bg-primary me-2 mb-2">Kafe A</span>
+                                <span class="badge bg-primary me-2 mb-2">Kafe B</span>
+                                <span class="badge bg-primary me-2 mb-2">Kafe C</span>
+                            </div>
+                        </div>
+                    </form>                  
+                </div>
+            </div>
         </div>
-        <div class="offcanvas-body">
-            @include('partials.collaps')
-        </div>
-    </div> --}}
-    {{-- End Bantuan --}}
+    </div>
+
 @endsection
