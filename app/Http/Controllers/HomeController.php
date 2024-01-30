@@ -34,4 +34,10 @@ class HomeController extends Controller
             'lencana' => $a
         ]);
     }
+
+    // Help Page
+    public function help()
+    {
+        return view('pages/help');
+    }
 }
