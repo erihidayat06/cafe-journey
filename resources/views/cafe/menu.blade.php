@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="position-fixed bottom-0 start-0 shadow" id="pembelian">
+    <div class="position-sticky bottom-0 mt-4 rounded start-0 shadow-sm" id="pembelian">
         <div class="row row-cols-3">
             @auth
                 <?php $total = 0; ?>
@@ -48,7 +48,7 @@
                 <div class="col">Sub Total : 0</div>
             @endauth
             <div class="col">
-                <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                <a href="" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#detail{{ $cafe->id }}">Lihat Pesanan</a>
             </div>
         </div>
