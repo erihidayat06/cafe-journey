@@ -1,108 +1,222 @@
-@extends('login.layouts.main')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('container')
-    <div class="container">
-        <div class="row row-cols-1 row-cols-lg-2 align-items-center">
-            <div class="col text-center">
-                <img src="/assets/img/login.jpg" width="50%" alt="">
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Login - {{ config('app.name') }}
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+    <style>
 
-                            <div class="row mb-3">
-                                <label for="name"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+        @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,700,900&display=swap');
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
 
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        body {
+            font-family: 'Roboto', sans-serif !important;
+            height: 100vh;
+            color: #3a3e42 !important;
+        }
 
-                            <div class="row mb-3">
-                                <label for="no_telepon"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('No Telepon') }}</label>
+        .AppForm {
+            border-radius: 20px !important;
+        }
 
-                                <div class="col-md-6">
-                                    <input id="no_telepon" type="text"
-                                        class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon"
-                                        value="{{ old('no_telepon') }}" required autocomplete="no_telepon" autofocus>
+        .AppForm .AppFormRight {
+            border-radius: 20px !important;
+        }
 
-                                    @error('no_telepon')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        .AppForm .AppFormLeft h1 {
+            font-family: 'Nunito';
+            font-weight: 700;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
 
-                            <div class="row mb-3">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+        .AppForm .AppFormLeft input:focus {
+            border-color: #ced4da;
+        }
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email">
+        .AppForm .AppFormLeft input::placeholder {
+            font-size: 15px;
+        }
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        .AppForm .AppFormLeft i {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-                            <div class="row mb-3">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+        .AppForm .AppFormLeft a {
+            color: #3a3e42;
+        }
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
+        .AppForm .AppFormLeft button {
+            background: linear-gradient(45deg, #610105, #a85655);
+            border-radius: 30px;
+        }
 
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        .AppForm .AppFormLeft p span {
+            color: #007bff;
+        }
 
-                            <div class="row mb-3">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+        .AppForm .AppFormRight {
+            background-image: url('https://img.freepik.com/free-vector/coffee-cup-floating-with-bean-cartoon-vector-icon-illustration-drink-food-icon-concept-isolated_138676-8608.jpg?w=740&t=st=1706499219~exp=1706499819~hmac=d7be5faae72fcb6fa0f71b638b420702f9767f94e95e96a022d1df375d6f82b2');
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
 
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                            </div>
+        .AppForm .AppFormRight:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(45deg, #8D334C, #CF6964); */
+            border-radius: 0px 15px 15px 0px !important;
+        }
 
-                            <div class="row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+        .AppForm .AppFormRight h2 {
+            z-index: 1;
+        }
+
+        .AppForm .AppFormRight h2::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .AppForm .AppFormRight p {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <form class="col-md-9" method="POST" action="{{ route('register') }}">
+                @csrf
+                <div class="AppForm shadow-lg">
+                    <div class="row">
+
+                        {{-- ALert --}}
+                        @if (session('status'))
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>{{ session('status') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        @endif
+
+                        <div class="col-md-6 d-flex justify-content-center align-items-center p-5">
+                            <div class="AppFormLeft">
+                                <h1>Register</h1>
+                                
+                                <div class="form-group position-relative mb-4">
+                                    <input type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="Name" placeholder="Name" name="name">
+                                    <i class="fa fa-user-o"></i>
+                                </div>
+
+                                <div class="form-group position-relative mb-4">
+                                    <input type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="no_telepon" placeholder="No Telepon" name="no_telepon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+
+                                <div class="form-group position-relative mb-4">
+                                    <input type="email"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="email" placeholder="Email" name="email">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group position-relative mb-4">
+                                            <input type="password"
+                                                class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                                id="password" placeholder="Password" name="password">
+                                            <i class="fa fa-key"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group position-relative mb-4">
+                                            {{-- Paddowrd_confirmation --}}
+                                            <input type="password"
+                                                class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                                id="password_confirmation" placeholder="Password Confirm" name="password_confirmation">
+                                            <i class="fa fa-key"></i>
+        
+                                            @if ($errors->has('password_confirmation'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                </span>
+                                            @endif
+        
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit"
+                                    class="btn btn-success btn-block shadow border-0 py-2 text-uppercase">
+                                    Register
+                                </button>
+
+                                <p class="text-center mt-5">
+                                    Already have an account?
+                                    <span>
+                                        <a class="text-danger fw-bold" href="{{ route('login') }}">Login</a>
+                                    </span>
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div
+                                class="AppFormRight position-relative d-flex justify-content-center flex-column align-items-center text-center p-5 text-white">
+                                {{-- <h2 class="position-relative px-4 pb-3 mb-4">
+                                    Cafe Journey
+                                </h2>
+                                <p>
+                                    Welcome to Cafe Journey. Please login with your personal info and enjoy the journey.
+                                </p> --}}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-@endsection
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </footer>
+</body>
+
+</html>

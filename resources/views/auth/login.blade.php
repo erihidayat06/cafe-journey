@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <style>
-
         @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,700,900&display=swap');
 
         * {
@@ -114,11 +113,22 @@
             <form class="col-md-9" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="AppForm shadow-lg">
+                    {{-- ALert --}}
+                    @if (session('status'))
+                        <div class="col-md-12">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ session('status') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-md-6 d-flex justify-content-center align-items-center">
                             <div class="AppFormLeft">
                                 <h1>Login</h1>
-                                
+
                                 <div class="form-group position-relative mb-4">
                                     <input type="text"
                                         class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
