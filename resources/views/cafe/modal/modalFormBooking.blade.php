@@ -10,34 +10,43 @@
             <div class="modal-body">
                 <form action="/booking" method="post">
                     @csrf
-                    <label for="">Nama Tempat</label>
-                    <input class="form-control" type="text" value="{{ $booking->nama_tempat }}" disabled>
 
-                    <label for="">Harga</label>
-                    <input class="form-control" type="text" value="{{ $booking->harga }}" disabled>
+                    <div class="form-group mb-3">
+                        <label for="">Nama Tempat</label>
+                        <input class="form-control" type="text" value="{{ $booking->nama_tempat }}" disabled>
+                    </div>
 
-                    <label for="tanggal_booking">Tanggal Booking</label>
-                    <input name="tanggal_booking" id="tanggal_booking"
-                        class="form-control @error('tanggal_booking') is-invalid @enderror" type="date">
+                    <div class="form-group mb-3">
+                        <label for="">Harga</label>
+                        <input class="form-control" type="text" value="{{ $booking->harga }}" disabled>
+                    </div>
 
-                    @error('tanggal_booking')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <div class="form-group mb-3">
+                        <label for="tanggal_booking">Tanggal Booking</label>
+                        <input name="tanggal_booking" id="tanggal_booking"
+                            class="form-control @error('tanggal_booking') is-invalid @enderror" type="date">
+                        @error('tanggal_booking')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                    <label for="jam_booking">Jam Booking</label>
-                    <input name="jam_booking" id="jam_booking"
-                        class="form-control @error('jam_booking') is-invalid @enderror" type="time">
-                    @error('jam_booking')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <div class="form-group mb-3">
+                        <label for="jam_booking">Jam Booking</label>
+                        <input name="jam_booking" id="jam_booking"
+                            class="form-control @error('jam_booking') is-invalid @enderror" type="time">
+                        @error('jam_booking')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                    @auth
-                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                    @endauth
-                    <input type="hidden" name="vip_id" value="{{ $booking->id }}">
-                    <input type="hidden" name="cafe_id" value="{{ $cafe->id }}">
-                    <input type="hidden" name="pemilik" value="{{ $cafe->user->id }}">
-
+                    <div class="form-group mt-3">
+                        @auth
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        @endauth
+                        <input type="hidden" name="vip_id" value="{{ $booking->id }}">
+                        <input type="hidden" name="cafe_id" value="{{ $cafe->id }}">
+                        <input type="hidden" name="pemilik" value="{{ $cafe->user->id }}">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
