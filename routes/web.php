@@ -57,22 +57,17 @@ foreach ($cafes as $cafe) {
 }
 
 
+// Homepage
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/help', [HomeController::class, 'help']);
 
-//Cafe
+// Cafe
 Route::get('/cafe/{cafe:slug}', [CafeController::class, 'profil']);
 Route::get('/cafe/menu/{cafe:slug}', [CafeController::class, 'menu']);
 Route::post('/cafe/menu/{cafe:slug}', [CafeController::class, 'menu']);
 Route::get('/cafe/booking/{cafe:slug}', [CafeController::class, 'booking']);
 Route::get('/cafe/ulasan/{cafe:slug}', [CafeController::class, 'ulasan']);
 Route::get('/cafe/jadwal/{cafe:slug}', [CafeController::class, 'jadwal']);
-
-// Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-// Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-// Route::post('/register/create', [RegisterController::class, 'create'])->middleware('guest');
-
-// Route::post('/authenticate', [LoginController::class, 'authenticate']);
-// Route::get('/logout', [LoginController::class, 'logout']);
 
 // User
 Route::get('/profil', [ProfilController::class, 'index'])->middleware('auth');
@@ -126,12 +121,19 @@ Route::get('admin/langganan/satu-minggu', [AdminLanggananController::class, 'sat
 Route::get('admin/langganan/konfir', [AdminLanggananController::class, 'daftarCafeKonfir'])->middleware('auth')->middleware('admin_web');
 Route::put('admin/langganan/{cafe:id}', [AdminLanggananController::class, 'tambahWaktu'])->middleware('auth')->middleware('admin_web');
 
-// profil
+// Profil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+// Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+// Route::post('/register/create', [RegisterController::class, 'create'])->middleware('guest');
+
+// Route::post('/authenticate', [LoginController::class, 'authenticate']);
+// Route::get('/logout', [LoginController::class, 'logout']);
 
 Auth::routes(['verify' => true]);
 require __DIR__ . '/auth.php';
