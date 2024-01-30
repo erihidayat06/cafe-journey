@@ -1,30 +1,46 @@
 @extends('login.layouts.main')
 @section('container')
-    <div class="row row-cols-1 row-cols-lg-2 align-items-center mt-4">
-        <div class="col text-center ">
-            <h3 class="text-title fw-bold">Selamat Bergabung di</h3>
-            <img src="/assets/img/login.jpg" width="50%" alt="">
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-                    <h3>Selamat Anda Telah Terdaftar Di Website Kami</h3>
-                    <img src="/assets/img/selamat.gif" alt="" width="50%">
-                    <p class="mt-4 fw-bold">Segera Hubungi <span class="text-danger">Admin Cafe Journey</span> Untuk
-                        Interview</p>
-
-                    <p class="fw-bold">No Antrian Anda : {{ auth()->user()->cafe->no_antrian }}</p>
-                    <input type="hidden" name="tanggal" id="tanggal"
-                        value="{{ date('M d, Y H:i:s', strtotime('+10 days', strtotime(auth()->user()->cafe->updated_at))) }}">
-                    <span class="fw-bold">Batas Akhir : </span>
-                    <p class="fw-bold text-danger" id="waktu"></p>
-                    <a href="https://api.whatsapp.com/send?phone=6285647715796&text=*Mendaftar Cafe*%0A%0ANama%20:%20{{ auth()->user()->name }}%0ANo%20Antrian%20:%20*{{ auth()->user()->cafe->no_antrian }}*%0ATanggal Daftar :%20{{ date('M d, Y H:i:s', strtotime(auth()->user()->cafe->updated_at)) }}%0AAkhir Pendaftaran :%20*{{ date('M d, Y H:i:s', strtotime('+10 days', strtotime(auth()->user()->cafe->updated_at))) }}*%0AAlamat%20:%20{{ auth()->user()->cafe->alamat }}%0ANo Telepon : {{ auth()->user()->no_telepon }}"
-                        class="btn btn-success"><i class="bi bi-whatsapp"></i> Hubungi Cafe Journey</a>
-                </div>
+   
+    <div class="waiting">
+        
+        <h3>
+            Kafe anda sudah terdaftar di sistem kami. <br>
+        </h3>
+        <div class="card rounded-sm shadow-sm border-0">
+            {{-- Table --}}
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nama Kafe</th>
+                            <th scope="col">No Telepon</th>
+                            <th scope="col">No Antrian</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Batas Akhir Interview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ auth()->user()->cafe->nama_cafe }}</td>
+                            <td>{{ auth()->user()->cafe->no_telepon }}</td>
+                            <td>{{ auth()->user()->cafe->no_antrian }}</td>
+                            <td>
+                                @if (auth()->user()->cafe->konfirmasi == 'tunggu')
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                @elseif(auth()->user()->cafe->konfirmasi == 'konfirmasi')
+                                    <span class="badge bg-success">Diterima</span>
+                                @endif
+                            </td>
+                            <td>{{ date('M d, Y H:i:s', strtotime('+10 days', strtotime(auth()->user()->cafe->updated_at))) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <small>
+                    Segera Hubungi Admin Cafe Journey Untuk Interview di <a href="https://api.whatsapp.com/send?phone=6285647715796&text=*Mendaftar Cafe*%0A%0ANama%20:%20{{ auth()->user()->name }}%0ANo%20Antrian%20:%20*{{ auth()->user()->cafe->no_antrian }}*%0ATanggal Daftar :%20{{ date('M d, Y H:i:s', strtotime(auth()->user()->cafe->updated_at)) }}%0AAkhir Pendaftaran :%20*{{ date('M d, Y H:i:s', strtotime('+10 days', strtotime(auth()->user()->cafe->updated_at))) }}*%0AAlamat%20:%20{{ auth()->user()->cafe->alamat }}%0ANo Telepon : {{ auth()->user()->no_telepon }}" class="fw-bold text-decoration-none">No. Whatsapp</a> ini.
+                </small>
             </div>
         </div>
     </div>
-
 
     <script>
         var tanggal = document.getElementById("tanggal").value
