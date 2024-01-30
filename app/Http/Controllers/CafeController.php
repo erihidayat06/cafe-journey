@@ -78,6 +78,16 @@ class CafeController extends Controller
 
     public function ulasan(Cafe $cafe)
     {
+        if (isset(auth()->user()->id)) {
+            if ($cafe->ulasan->where('user_id', auth()->user()->id)->first() !== null) {
+                $ulasan = $cafe->ulasan->where('user_id', auth()->user()->id)->first();
+            } else {
+                $ulasan = 'p';
+            }
+        } else {
+            $ulasan = 'p';
+        };
+
         $ulasans = $cafe->ulasan;
 
         if ($cafe->konfirmasi === 'tunggu') {
@@ -88,6 +98,7 @@ class CafeController extends Controller
             'cafes'     => $cafe,
             'bookings'  => $cafe->vip,
             'ulasans'   => $ulasans,
+            'ulasan'   => $ulasan,
             'semua'     =>  $cafe->ulasan
         ]);
     }
