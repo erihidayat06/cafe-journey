@@ -7,100 +7,117 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             @auth
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bantuan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tentang Kami</a>
-                </li>
-            </ul>
-            <div class="d-flex align-items-center">
-                <button class="btn me-2" id="searchIcon">
-                    <i class="bi bi-search"></i>
-                </button>
-                <form action="/" class="d-none" id="searchForm" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari Nama Cafe [ENTER]"
-                            aria-label="Cari Nama Cafe [ENTER]" name="cari" value="{{ request('cari') }}">
-                    </div>
-                </form>
-            </div>
-            <a href="/booking" class="btn active-button position-relative ms-2">
-                <i class="bi bi-handbag-fill"></i> Pesanan
-                <span class="badge rounded-pill bg-light text-danger">
-                    @if (count(auth()->user()->booking) !== null)
-                        {{ count(auth()->user()->booking) }}
-                    @endif
-                </span>
-            </a>
-            <li class="nav-item dropdown" style="list-style: none">
-                <a class="nav-link dropdown-toggle text-light" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fcc8703441cb378d610c5e8247cefdb2d52b46d_full.jpg" alt="User Avatar"
-                        class="avatar rounded-circle ms-3" width="45" height="45">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-lg-end border-0 shadow mt-3">
-                    <li class="text-center">
-                        <h6 class="p-0">{{ auth()->user()->name }}</h6>
-                        <span style="font-size: 14px; color:rgb(117, 117, 117)">User</span>
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
                     </li>
-                    <li>
-                        <hr class="dropdown-divider">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bantuan</a>
                     </li>
-                    <li><a class="dropdown-item" href="/profil">Profil</a></li>
-                    <li class="d-flex justify-content-between align-items-start">
-                        <a class="dropdown-item" href="/beli">Pesanan</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tentang Kami</a>
                     </li>
-                    @can('admin')
-                        <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Cafe</a></li>
-                    @endcan
-                    @can('admin_web')
-                        <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
-                    @endcan
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <form id="logoutForm" action="/logout" method="POST">
-                        @csrf
-                        <li>
-                            <button class="dropdown-item" type="button" onclick="confirmLogout()">Logout</button>
-                        </li>
-                    </form>
                 </ul>
-            </li>
+                <div class="d-flex align-items-center">
+                    <button class="btn me-2" id="searchIcon">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <form action="/" class="d-none" id="searchForm" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari Nama Cafe [ENTER]"
+                                aria-label="Cari Nama Cafe [ENTER]" name="cari" value="{{ request('cari') }}">
+                        </div>
+                    </form>
+                </div>
+                <a href="/booking" class="btn active-button position-relative ms-2">
+                    <i class="bi bi-handbag-fill"></i> Pesanan
+                    <span class="badge rounded-pill bg-light text-danger">
+                        @if (count(auth()->user()->booking) !== null)
+                            {{ count(auth()->user()->booking) }}
+                        @endif
+                    </span>
+                </a>
+                <li class="nav-item dropdown" style="list-style: none">
+                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fcc8703441cb378d610c5e8247cefdb2d52b46d_full.jpg"
+                            alt="User Avatar" class="avatar rounded-circle ms-3" width="45" height="45">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end border-0 shadow mt-3">
+                        <li class="text-center">
+                            <h6 class="p-0">{{ auth()->user()->name }}</h6>
+                            <span style="font-size: 14px; color:rgb(117, 117, 117)">User</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/profil">Profil</a></li>
+                        <li class="d-flex justify-content-between align-items-start">
+                            <a class="dropdown-item" href="/beli">Pesanan</a>
+                        </li>
+                        @can('admin')
+                            <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Cafe</a></li>
+                        @endcan
+                        @can('admin_web')
+                            <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
+                        @endcan
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <form id="logoutForm" action="/logout" method="POST">
+                            @csrf
+                            <li>
+                                <button class="dropdown-item" type="button" onclick="confirmLogout()">Logout</button>
+                            </li>
+                        </form>
+                    </ul>
+                </li>
             @else
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Contacts</a>
-                </li>
-            </ul>
-            <div class="d-flex align-items-center">
-                <a id="button-register" href="/register" class="btn active-button">Sign Up</a>
-                {{-- <a id="button-login" href="/login" class="btn btn-light deactive-button">Login</a> --}}
-            </div>
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contacts</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn me-2" id="searchIcon">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <form action="/" id="searchForm" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control me-2 rounded-sm"
+                                placeholder="Cari Nama Cafe [ENTER]" aria-label="Cari Nama Cafe [ENTER]" name="cari"
+                                value="{{ request('cari') }}">
+                            {{-- Button submit hanya di layar hp --}}
+                            <button class="btn btn-outline-secondary d-block d-sm-none" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="d-flex align-items-center">
+                    <a id="button-register" href="/register" class="btn active-button">Sign Up</a>
+                    {{-- <a id="button-login" href="/login" class="btn btn-light deactive-button">Login</a> --}}
+                </div>
             @endauth
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const searchIcon = document.getElementById("searchIcon");
-        const searchForm = document.getElementById("searchForm");
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchIcon = document.getElementById("searchIcon");
+            const searchForm = document.getElementById("searchForm");
 
-            searchIcon.addEventListener("click", function () {
+            searchIcon.addEventListener("click", function() {
                 searchForm.classList.toggle("d-none");
                 searchForm.classList.toggle("animate__animated");
                 searchForm.classList.toggle("animate__slideInRight");
@@ -115,13 +132,12 @@
 
         // Alert Confirm Logout
         function confirmLogout() {
-        if (window.confirm("Apakah Anda yakin ingin logout?")) {
-            // Jika user mengonfirmasi, jalankan proses logout
-            document.forms["logoutForm"].submit();
-        } else {
-            // Jika user membatalkan, tidak lakukan apa-apa
+            if (window.confirm("Apakah Anda yakin ingin logout?")) {
+                // Jika user mengonfirmasi, jalankan proses logout
+                document.forms["logoutForm"].submit();
+            } else {
+                // Jika user membatalkan, tidak lakukan apa-apa
+            }
         }
-    }
-    
     </script>
 </nav>
