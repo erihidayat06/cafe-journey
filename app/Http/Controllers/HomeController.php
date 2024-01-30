@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
+    // Home Page
     public function index()
     {
         $i = [];
@@ -39,5 +40,11 @@ class HomeController extends Controller
     public function help()
     {
         return view('pages/help');
+    }
+
+    // About Page
+    public function about()
+    {
+        return view('pages/about');
     }
 }

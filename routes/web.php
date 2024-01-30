@@ -60,6 +60,7 @@ foreach ($cafes as $cafe) {
 // Homepage
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/help', [HomeController::class, 'help']);
+Route::get('/about', [HomeController::class, 'about']);
 
 // Cafe
 Route::get('/cafe/{cafe:slug}', [CafeController::class, 'profil']);
