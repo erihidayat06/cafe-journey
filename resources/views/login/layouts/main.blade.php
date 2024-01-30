@@ -5,30 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pendaftaran Cafe</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>Cafe Journey - Cafe Register</title>
+
+    {{-- All Vendors --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+
+    {{-- Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    {{-- Poppins 700,800,900 --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700,800,900">
+
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- Favicons -->
     <link href="/assets/img/favicon1.png" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    {{-- icon boostrap --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/number.css">
 </head>
 
 <body>
 
     @include('login.partials.navbar')
     <main>
-        <div class="container">
-            <div style="margin-top: 70px;padding:50px 10px" class="card mb-2">
+        <div class="container mt-5">
+            @yield('container')
+            {{-- <div style="margin-top: 70px;padding:50px 10px" class="card mb-2">
                 <div class="card-body">
                     @include('sweetalert::alert')
-                    @yield('container')
+                    
                 </div>
-            </div>
+            </div> --}}
         </div>
     </main>
 
