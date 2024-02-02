@@ -9,7 +9,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center px-3 pt-4 mb-3">
                         <h5 class="fw-bold">
-                            Popular Cafe
+                            Kafe Terpopuler
                         </h5>
                         <a href="/cafes" class="text-decoration-none">Lihat Semua</a>
                     </div>
@@ -119,14 +119,18 @@
                             <div class="px-5 py-5 mt-5">
                                 <div class="px-2 py-2 align-middle">
                                     <h4 class="hero-title"><span style="color: #cf9181">Cari,</span> <span
-                                            style="color: #385a64">Pesan <br> &</span> <span style="color: #ff755f;">Santai!</span>
+                                            style="color: #385a64">Pesan <br> &</span> <span
+                                            style="color: #ff755f;">Santai!</span>
                                     </h4>
                                     <p class="hero-subtitle">
-                                        Temukan dunia kafe yang menyenangkan di Tegal. Jelajahi tempat ngopi terbaik yang dicari khusus untuk Anda. Dari sudut yang nyaman hingga suasana yang semarak, kami memiliki semua kebutuhan kafe Anda.
+                                        Temukan dunia kafe yang menyenangkan di Tegal. Jelajahi tempat ngopi terbaik yang dicari
+                                        khusus untuk Anda. Dari sudut yang nyaman hingga suasana yang semarak, kami memiliki
+                                        semua kebutuhan kafe Anda.
                                     </p>
                                 </div>
                                 <div class="px-2 py-2">
-                                    <button type="button" class="hero-button shadow-sm" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                    <button type="button" class="hero-button shadow-sm" data-bs-toggle="modal"
+                                        data-bs-target="#searchModal">
                                         <i class="bi bi-search ps-2"></i>
                                         <span class="px-2">Cari Kafe Sekarang</span>
                                     </button>
@@ -320,15 +324,17 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Cari Nama Cafe [ENTER]"
                                 aria-label="Cari Nama Cafe [ENTER]" name="cari" value="{{ request('cari') }}">
-                            
+
                             <!-- Pill Rekomendasi -->
                             <div class="input-group-append ms-2">
-                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#rekomendasiPills" aria-expanded="false" aria-controls="rekomendasiPills">
+                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#rekomendasiPills" aria-expanded="false"
+                                    aria-controls="rekomendasiPills">
                                     Rekomendasi
                                 </button>
                             </div>
                         </div>
-    
+
                         <!-- Pill Rekomendasi (hidden by default) -->
                         <div class="collapse mt-2" id="rekomendasiPills">
                             <div class="d-flex flex-wrap">
@@ -338,7 +344,7 @@
                                 <span class="badge bg-primary me-2 mb-2">Kafe C</span>
                             </div>
                         </div>
-                    </form>                  
+                    </form>
                 </div>
             </div>
         </div>
