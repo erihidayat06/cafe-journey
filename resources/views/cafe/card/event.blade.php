@@ -1,11 +1,12 @@
-{{-- Title --}}
+<div class="container">
+    {{-- Title --}}
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h5 class="mb-0">Event/Promo</h5>
 </div>
 
+@auth
 <div id="carouselExampleInterval" class="carousel rounded-sm slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner rounded-2">
-
         @foreach ($events->chunk(4) as $key => $eventChunk)
             <div class="carousel-item{{ $key === 0 ? ' active' : '' }}" data-bs-interval="3000">
                 <div class="row">
@@ -34,4 +35,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>
+@else 
+<div class="alert alert-info" role="alert">
+    <strong>Anda harus login terlebih dahulu untuk melihat event/promo</strong>
+</div>
+@endauth
 </div>
