@@ -16,12 +16,14 @@
                             @if ($lencana[0] == $cafe->nama_cafe)
                                 <img class="lencana shadow-lg" src="/assets/img/terbaik_1.png" alt="" width="60px">
                             @elseif ($lencana[1] == $cafe->nama_cafe)
-                                <img class="lencana shadow-lg" src="/assets/img/terbaik_2.png" alt="" width="60px">
+                                <img class="lencana shadow-lg" src="/assets/img/terbaik_2.png" alt=""
+                                    width="60px">
                             @elseif ($lencana[2] == $cafe->nama_cafe)
-                                <img class="lencana shadow-lg" src="/assets/img/terbaik_3.png" alt="" width="60px">
+                                <img class="lencana shadow-lg" src="/assets/img/terbaik_3.png" alt=""
+                                    width="60px">
                             @endif
                             {{-- END Lencana --}}
-    
+
                             <div class="card rounded-sm p-3 border-0 shadow-sm mb-3">
                                 <a href="/cafe/{{ $cafe->slug }}" class="text-decoration-none text-main">
                                     @if (isset($cafe->gambar_profil))
@@ -29,13 +31,13 @@
                                             src="{{ asset('storage/' . $cafe->gambar_profil) }}"
                                             class="card-img-top img-profil rounded-sm" alt="...">
                                     @else
-                                        <img style="object-fit: cover" src="/assets/img/default.png" class="card-img-top img-profil"
-                                            alt="..." width="50px" height="160px">
+                                        <img style="object-fit: cover" src="/assets/img/default.png"
+                                            class="card-img-top img-profil" alt="..." width="50px" height="160px">
                                     @endif
                                     <div class="card-body">
                                         <h6 style="width: 100%" class="card-title text-over d-inline-block text-truncate">
                                             {{ $cafe->nama_cafe }}</h6>
-    
+
                                         {{-- Rata Rata Rating --}}
                                         @if (count($cafe->ulasan) > 0)
                                             <?php
@@ -43,7 +45,7 @@
                                             $jumlahRating = $cafe->ulasan->sum('rating');
                                             ?>
                                         @endif
-    
+
                                         {{-- Rating --}}
                                         @if (count($cafe->ulasan) > 0)
                                             <div style="color:#676767;"
@@ -82,18 +84,22 @@
                                             </div>
                                         @endif
                                         {{-- End Rating --}}
-    
+
                                         {{-- Domisili Dan Kecamatan --}}
                                         <p style="font-size: 11px" class="card-text ">{{ $cafe->domisili }} | Kec
                                             {{ $cafe->kecamatan }}
                                         </p>
-    
+
                                     </div>
                                 </a>
                             </div>
                         </div>
                     @endforeach
                 </div>
+                <!-- Display Manual Pagination Links -->
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $cafes->links() }}
+                </div> 
             </div>
         </div>
     </section>
