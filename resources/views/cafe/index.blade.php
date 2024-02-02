@@ -6,6 +6,5 @@
     @include('cafe.card.alamat')
     @include('cafe.card.foto')
     @include('cafe.card.jadwal')
-    @include('cafe.card.rating')
     @include('cafe.card.kontak')
 @endsection
