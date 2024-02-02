@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Cafe extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
 
     // Relasi Table
@@ -36,6 +35,7 @@ class Cafe extends Model
     {
         return $this->hasMany(Minum::class);
     }
+
     public function event()
     {
         return $this->hasMany(Event::class);
@@ -66,7 +66,6 @@ class Cafe extends Model
         return $this->hasOne(Jadwal::class);
     }
 
-    // key
     public function getRouteKeyName()
     {
         return 'slug';
@@ -90,12 +89,31 @@ class Cafe extends Model
         );
     }
 
+    public function sortedCafesByRating()
+    {
+        // Ambil Data Cafe
+        $cafes = Cafe::latest()->where('konfirmasi', 'konfirmasi')->get();
 
-    // public function scopeCari($query, $filters)
-    // {
-    //     $query->where('nama_cafe', 'like', '%' . $filters . '%')
-    //         ->orWhere('alamat', 'like', '%' . $filters . '%')
-    //         ->orWhere('domisili', 'like', '%' . $filters . '%')
-    //         ->orWhere('kecamatan', 'like', '%' . $filters . '%');
-    // }
+        // Ambil Data Ulasans
+        $ulasans = Ulasan::all();
+
+        // Menghitung Performa cafe
+        $performa = [];
+
+        foreach ($cafes as $cafe) {
+            $performa[] = [
+                ($cafe->ulasan->sum('rating') + $cafe->beli->where('no_pesanan', '!==', null)->sum('jumlah')),
+                $cafe->nama_cafe
+            ];
+        }
+
+        // Sortir Terbesar
+        arsort($performa);
+
+        // Ambil Semua Data tanpa batasan
+        $topPerformers = $performa;
+
+        // Return Data
+        return $topPerformers;
+    }
 }
