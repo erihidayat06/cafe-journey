@@ -11,7 +11,7 @@
                         <h5 class="fw-bold">
                             Popular Cafe
                         </h5>
-                        <a href="/cafe" class="text-decoration-none">See All</a>
+                        <a href="/cafes" class="text-decoration-none">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                         <h5 class="fw-bold">
                             Kafe Terpopuler
                         </h5>
-                        <a href="/cafe" class="text-decoration-none">Lihat Semua</a>
+                        <a href="/cafes" class="text-decoration-none">Lihat Semua</a>
                     </div>
                 </div>
             </div>
