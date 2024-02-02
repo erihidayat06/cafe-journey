@@ -57,15 +57,14 @@ class HomeController extends Controller
             return Cafe::where('nama_cafe', $cafe[1])->first();
         }, $sortedCafes);
 
-        // Paginate the sorted cafes 
+        // Konfigurasi Pagination
         $page = request('page') ? request('page') : 1;
         $perPage = 6;
-
         $cafes = new Collection($sortedCafes);
         $currentPage = $page;
-
         $currentPageSearchResults = $cafes->slice(($currentPage - 1) * $perPage, $perPage)->all();
 
+        // Buat LengthAwarePaginator
         $sortedCafesPaginated = new LengthAwarePaginator(
             $currentPageSearchResults,
             count($cafes),
@@ -77,7 +76,7 @@ class HomeController extends Controller
             ]
         );
 
-        // Return View with paginated sorted cafes
+        // Kembalikan View
         return view('pages/cafes', [
             'cafes' => $sortedCafesPaginated,
             'lencana' => $lencana,
