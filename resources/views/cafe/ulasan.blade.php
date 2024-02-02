@@ -83,7 +83,13 @@
             <div class="card rounded mb-2">
                 <div class="card-body">
                     <div class="row row-cols-2">
-                        <div class="col text-start">{{ $ulasan->user->name }}</div>
+                        <div class="col text-start">
+                            @if ($ulasan->user)
+                                {{ $ulasan->user->name }}
+                            @else
+                                Anonim
+                            @endif
+                        </div>
                         <div class="col text-end">
                             <div class="rate">
                                 <span>
