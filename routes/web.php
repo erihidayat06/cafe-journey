@@ -62,7 +62,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/help', [HomeController::class, 'help']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
-Route::get('/cafes', [HomeController::class, 'cafes']);
+Route::get('/cafes', [HomeController::class, 'cafes'])->name('cafes');
 
 // Cafe
 Route::get('/cafe/{cafe:slug}', [CafeController::class, 'profil']);
