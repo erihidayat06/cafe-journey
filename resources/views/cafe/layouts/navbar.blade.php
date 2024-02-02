@@ -1,3 +1,4 @@
+{{-- Navbar --}}
 <nav class="navbar navbar-expand-lg py-3 shadow-sm fixed-top" style="background-color: #fff;">
     <div class="container">
         <a class="navbar-brand" href="/">Cafe Journey</a>
@@ -9,14 +10,17 @@
             @auth
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        <a class="nav-link" href="/">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bantuan</a>
+                        <a class="nav-link" href="/help">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link" href="/about">Tentang</a>
                     </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="/contact">Kontak</a>
+                    </li> --}}
                 </ul>
                 <div class="d-flex align-items-center">
                     <button class="btn me-2" id="searchIcon">
@@ -29,6 +33,8 @@
                         </div>
                     </form>
                 </div>
+
+                {{-- Button Booking --}}
                 <a href="/booking" class="btn active-button position-relative ms-2">
                     <i class="bi bi-handbag-fill"></i> Pesanan
                     <span class="badge rounded-pill bg-light text-danger">
@@ -37,6 +43,16 @@
                         @endif
                     </span>
                 </a>
+
+                {{-- Kelola Kafe --}}
+                @can('bukan_admin')
+                    <a href="/daftar-cafe" class="btn btn-kelola position-relative ms-2">
+                        <i class="bi bi-house-check-fill"></i> Daftarkan Cafe
+                    </a>
+                @endcan
+
+                {{-- Dropdown User --}}
+
                 <li class="nav-item dropdown" style="list-style: none">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -56,10 +72,13 @@
                             <a class="dropdown-item" href="/beli">Pesanan</a>
                         </li>
                         @can('admin')
-                            <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Cafe</a></li>
+                            <li><a class="dropdown-item" href="/dashboard/cafe/">Manajemen Kafe</a></li>
                         @endcan
                         @can('admin_web')
                             <li><a class="dropdown-item" href="/admin">Halaman Admin</a></li>
+                        @endcan
+                        @can('bukan_admin')
+                            <li><a class="dropdown-item" href="/daftar-cafe/">Daftarkan Cafe Anda</a></li>
                         @endcan
                         <li>
                             <hr class="dropdown-divider">
@@ -67,7 +86,7 @@
                         <form id="logoutForm" action="/logout" method="POST">
                             @csrf
                             <li>
-                                <button class="dropdown-item" type="button" onclick="confirmLogout()">Logout</button>
+                                <button class="dropdown-item" type="button" onclick="confirmLogout()">Keluar</button>
                             </li>
                         </form>
                     </ul>
@@ -75,20 +94,37 @@
             @else
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
+                        <a class="nav-link" href="/help">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="/about">Tentang</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contacts</a>
-                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="/contact">Kontak</a>
+                    </li> --}}
                 </ul>
                 <div class="d-flex align-items-center">
-                    <a id="button-register" href="/register" class="btn active-button">Sign Up</a>
+                    <button class="btn me-2" id="searchIcon">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <form action="/" id="searchForm" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control me-2 rounded-sm"
+                                placeholder="Cari Nama Cafe [ENTER]" aria-label="Cari Nama Cafe [ENTER]" name="cari"
+                                value="{{ request('cari') }}">
+                            {{-- Button submit hanya di layar hp --}}
+                            <button class="btn btn-outline-secondary d-block d-sm-none" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="d-flex align-items-center">
+                    <a id="button-register" href="/register" class="btn active-button">Daftar</a>
                     {{-- <a id="button-login" href="/login" class="btn btn-light deactive-button">Login</a> --}}
                 </div>
             @endauth
@@ -124,12 +160,13 @@
         }
     </script>
 </nav>
+{{-- End Navbar --}}
 
 {{-- Card Description --}}
-
 <section class="cafe-card-detail">
     <div class="card text-bg-dark container mt-5 rounded-sm shadow-sm">
-        <img src="{{ asset('storage/' . $cafes->gambar_profil) }}" class="card-img rounded-sm img-cafe" alt="...">
+        <img src="{{ asset('storage/' . $cafes->gambar_profil) }}" class="card-img rounded-sm img-cafe"
+            alt="...">
 
         <div class="card-img-overlay bg-nav-cafe rounded-sm">
             <div class="row row-cols-1 row-cols-lg-2 ">
@@ -237,3 +274,4 @@
         </div>
     </nav>
 </section>
+{{-- End Card Description --}}
