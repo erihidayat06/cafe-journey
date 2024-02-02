@@ -209,27 +209,27 @@
     </div>
 
     <nav class="navbar">
-        <div class="container bg-white text-main rounded-sm shadow-sm pt-3 pb-2 mt-2">
+        <div class="container bg-light text-main rounded-pill shadow-sm py-2 mt-2">
             <div class="text-center" id="navbarNav">
                 <ul class="nav ">
                     <li class="nav-item text-main">
-                        <a style="color: #c1745f; {{ Request::is("cafe/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                        <a style="color: #c1745f; {{ Request::is("cafe/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 30px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/{{ $cafes->slug }}">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color: #c1745f; {{ Request::is("cafe/ulasan/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                        <a style="color: #c1745f; {{ Request::is("cafe/ulasan/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 30px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/ulasan/{{ $cafes->slug }}">Ulasan</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color: #c1745f; {{ Request::is("cafe/menu/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                        <a style="color: #c1745f; {{ Request::is("cafe/menu/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 30px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/menu/{{ $cafes->slug }}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color: #c1745f; {{ Request::is("cafe/booking/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                        <a style="color: #c1745f; {{ Request::is("cafe/booking/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 30px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/booking/{{ $cafes->slug }}">Reservasi</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color: #c1745f; {{ Request::is("cafe/jadwal/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 20px; background-color: #c1745f; color:#fff' : '' }}"
+                        <a style="color: #c1745f; {{ Request::is("cafe/jadwal/$cafes->slug") ? 'border:2px solid #c1745f; border-radius: 30px; background-color: #c1745f; color:#fff' : '' }}"
                             class="nav-link" href="/cafe/jadwal/{{ $cafes->slug }}">Jadwal</a>
                     </li>
                 </ul>
