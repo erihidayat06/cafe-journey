@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cafe;
-use App\Models\User;
-use App\Models\Jadwal;
-use App\Models\Beli;
-use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+
 
 class HomeController extends Controller
 {
@@ -57,9 +57,39 @@ class HomeController extends Controller
     // All Cafes with Pagination
     public function cafes()
     {
+        // Panggil method sortedCafesByRating dari model cafe
+        $sortedCafes = (new Cafe())->sortedCafesByRating();
+        $lencana = Cafe::latest()->where('konfirmasi', 'konfirmasi')->get();
+
+        // Ambil Atribut Cafe berdasarkan SortedCafes
+        $sortedCafes = array_map(function ($cafe) {
+            return Cafe::where('nama_cafe', $cafe[1])->first();
+        }, $sortedCafes);
+
+        // Paginate the sorted cafes 
+        $page = request('page') ? request('page') : 1;
+        $perPage = 6;
+
+        $cafes = new Collection($sortedCafes);
+        $currentPage = $page;
+
+        $currentPageSearchResults = $cafes->slice(($currentPage - 1) * $perPage, $perPage)->all();
+
+        $sortedCafesPaginated = new LengthAwarePaginator(
+            $currentPageSearchResults,
+            count($cafes),
+            $perPage,
+            $currentPage,
+            [
+                'path' => Paginator::resolveCurrentPath(),
+                'pageName' => 'page',
+            ]
+        );
+
+        // Return View with paginated sorted cafes
         return view('pages/cafes', [
-            'cafes' => Cafe::latest()->where('konfirmasi', 'konfirmasi')->paginate(6),
-            'lencana' => Cafe::latest()->where('konfirmasi', 'konfirmasi')->get(),
+            'cafes' => $sortedCafesPaginated,
+            'lencana' => $lencana,
         ]);
     }
 }
