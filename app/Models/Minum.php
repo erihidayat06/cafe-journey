@@ -32,4 +32,21 @@ class Minum extends Model
     {
         $query->where('nama_minuman', 'like', '%' . $cari . '%');
     }
+
+    public function favoriteDrinks()
+    {
+        // Ambil semua data yang ada di tabel beli
+        $beli = Beli::all();
+
+        // Hitung jumlah minuman yang dibeli
+        $sortMinum = $beli->countBy('minum_id');
+
+        // Urutkan minuman yang paling banyak dibeli
+        $minum = $sortMinum->sortDesc();
+
+        // Ambil 3 minuman yang paling
+        $minum = $minum->take(3);
+
+        return $minum;
+    }
 }
