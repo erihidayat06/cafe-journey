@@ -178,7 +178,7 @@
                         <img class="img-cafe-logo" src="/assets/img/default.png" alt="">
                     @endif
                 </div>
-                <div class="col">
+                <div class="col-lg-10">
                     <div class="text-cafe mt-4">
                         <h3 class="text-capitalize">{{ $cafes->nama_cafe }}</h3>
                         @if (count($semua) > 0)
