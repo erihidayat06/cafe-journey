@@ -31,6 +31,27 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/number.css">
+
+    <style>
+        .img-empty-reservasi {
+            width: 20%;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .cafe-card-detail {
+                padding: 0px !important;
+                margin: 10px !important;
+            }
+            .cafe-card-detail .img-cafe-logo {
+                display: none;
+            }
+            .img-empty-reservasi {
+                width: 100% !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
