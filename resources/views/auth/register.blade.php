@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        Login - {{ config('app.name') }}
+        Register - {{ config('app.name') }}
     </title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
 
     <style>
-
-        @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,700,900&display=swap');
-
         * {
             padding: 0;
             margin: 0;
@@ -22,7 +21,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif !important;
+            font-family: 'Nunito', sans-serif !important;
             height: 100vh;
             color: #3a3e42 !important;
         }
@@ -72,7 +71,8 @@
 
         .AppForm .AppFormRight {
             background-image: url('https://img.freepik.com/free-vector/coffee-cup-floating-with-bean-cartoon-vector-icon-illustration-drink-food-icon-concept-isolated_138676-8608.jpg?w=740&t=st=1706499219~exp=1706499819~hmac=d7be5faae72fcb6fa0f71b638b420702f9767f94e95e96a022d1df375d6f82b2');
-            height: 450px;
+            height: 100% !important;
+            width: 100%;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -131,12 +131,12 @@
 
                         <div class="col-md-6 d-flex justify-content-center align-items-center p-5">
                             <div class="AppFormLeft">
-                                <h1>Register</h1>
+                                <h1>Registrasi</h1>
                                 
                                 <div class="form-group position-relative mb-4">
                                     <input type="text"
                                         class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
-                                        id="Name" placeholder="Name" name="name">
+                                        id="Name" placeholder="Nama Lengkap" name="name">
                                     <i class="fa fa-user-o"></i>
                                 </div>
 
@@ -159,7 +159,7 @@
                                         <div class="form-group position-relative mb-4">
                                             <input type="password"
                                                 class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
-                                                id="password" placeholder="Password" name="password">
+                                                id="password" placeholder="Kata Sandi" name="password">
                                             <i class="fa fa-key"></i>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@
                                             {{-- Paddowrd_confirmation --}}
                                             <input type="password"
                                                 class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
-                                                id="password_confirmation" placeholder="Password Confirm" name="password_confirmation">
+                                                id="password_confirmation" placeholder="Ulang Kata Sandi" name="password_confirmation">
                                             <i class="fa fa-key"></i>
         
                                             @if ($errors->has('password_confirmation'))
@@ -183,13 +183,13 @@
 
                                 <button type="submit"
                                     class="btn btn-success btn-block shadow border-0 py-2 text-uppercase">
-                                    Register
+                                    Daftar
                                 </button>
 
                                 <p class="text-center mt-5">
-                                    Already have an account?
+                                    Sudah punya akun?
                                     <span>
-                                        <a class="text-danger fw-bold" href="{{ route('login') }}">Login</a>
+                                        <a class="text-danger fw-bold" href="{{ route('login') }}">Masuk Disini</a>
                                     </span>
                                 </p>
 
