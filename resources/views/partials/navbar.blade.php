@@ -17,9 +17,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about">Tentang</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/contact">Kontak</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="d-flex align-items-center">
                     <button class="btn me-2" id="searchIcon">
@@ -35,7 +35,8 @@
 
                 {{-- Button Booking --}}
                 <a href="/booking" class="btn active-button position-relative ms-2">
-                    <i class="bi bi-handbag-fill"></i> Pesanan
+                    <i class="bi bi-cart"></i> 
+                    Booking
                     <span class="badge rounded-pill bg-light text-danger">
                         @if (count(auth()->user()->booking) !== null)
                             {{ count(auth()->user()->booking) }}
@@ -101,9 +102,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about">Tentang</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/contact">Kontak</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="d-flex align-items-center">
                     <button class="btn me-2" id="searchIcon">
