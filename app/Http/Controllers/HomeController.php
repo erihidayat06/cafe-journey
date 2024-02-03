@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cafe;
+use App\Models\Minum;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
@@ -14,6 +15,7 @@ class HomeController extends Controller
     // Home Page
     public function index()
     {
+        // Panggil method sortedCafesByRating dari model cafe
         $sortedCafes = (new Cafe())->sortedCafesByRating();
         $lencana = Cafe::latest()->where('konfirmasi', 'konfirmasi')->get();
 
@@ -22,7 +24,7 @@ class HomeController extends Controller
             return Cafe::where('nama_cafe', $cafe[1])->first();
         }, $sortedCafes);
 
-        // Ambil hanya 4 Cafe teratas
+        // Tampilkan 4 Cafe Terbaik berdasarkan Rating dan urutkan berdasarkan Rating
         $sortedCafes = array_slice($sortedCafes, 0, 4);
 
         // Return View
@@ -31,7 +33,6 @@ class HomeController extends Controller
             'lencana' => $lencana,
         ]);
     }
-
 
     // Help Page
     public function help()
@@ -82,4 +83,6 @@ class HomeController extends Controller
             'lencana' => $lencana,
         ]);
     }
+
+    // Favorite Drinks
 }
