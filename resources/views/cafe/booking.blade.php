@@ -44,8 +44,13 @@
         </table>
     </div>
     @if (count($bookings) <= 0)
-        <div class="row mt-2 text-center">
-            <p class="text-main">KOSONGGGG !!!!</p>
+    <div class="container">
+        <div class="row mt-2 text-center card rounded-sm p-3 shadow-sm border-0">
+            <img src="https://img.freepik.com/free-vector/hungry-boy-concept-illustration_114360-16586.jpg?w=1080&t=st=1706934021~exp=1706934621~hmac=d3b2609adae350194b71a7f18884350a859d54167717a193f49a3bd62a39dca5" alt="" class="mx-auto img-empty-reservasi">
+            <p class="text-main fw-bold pt-3">
+                Saat ini tidak ada tempat yang dipesan
+            </p>
         </div>
+    </div>
     @endif
 @endsection
