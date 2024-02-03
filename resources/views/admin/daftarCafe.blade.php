@@ -7,9 +7,9 @@
 
                 <div class="card">
                     <div class="card-body ">
-                        <h5 class="card-title">Datatables</h5>
-
-
+                        <h5 class="card-title">
+                            Kelola Kafe
+                        </h5>
                         <div class="table-responsive ">
                             <ul class="nav nav-underline">
                                 <li class="nav-item">
@@ -22,7 +22,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-color {{ Request::is('admin/daftar-cafe/konfir') ? 'nav-border' : '' }}"
-                                        href="/admin/daftar-cafe/konfir">Konfir</a>
+                                        href="/admin/daftar-cafe/konfir">Terkonfirmasi</a>
                                 </li>
                             </ul>
 

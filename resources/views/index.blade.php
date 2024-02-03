@@ -3,7 +3,6 @@
 @section('container')
     @auth
         <section id="cafe-list-container" class="rounded-sm p-3">
-
             {{-- Section Title --}}
             <div class="row" id="cafe-list-title">
                 <div class="col">
@@ -17,9 +16,9 @@
             </div>
 
             {{-- Cafe List --}}
-            <div id="cafe-list-card" class="row row-cols-2 row-cols-lg-4 g-4 p-3 mb-4">
+            <div id="cafe-list-card" class="row row-cols-12 col-sm-12 row-cols-lg-4 g-4 p-3 mb-4">
                 @foreach ($cafes as $cafe)
-                    <div class="col-6 col-md-3" style="position: relative">
+                    <div class="col-12 col-md-3 mb-1" style="position: relative">
                         {{-- Lencana --}}
                         @if ($lencana[0] == $cafe->nama_cafe)
                             <img class="lencana shadow-lg" src="/assets/img/terbaik_1.png" alt="" width="60px">
@@ -37,8 +36,8 @@
                                         src="{{ asset('storage/' . $cafe->gambar_profil) }}"
                                         class="card-img-top img-profil rounded-sm" alt="...">
                                 @else
-                                    <img style="object-fit: cover" src="/assets/img/default.png" class="card-img-top img-profil"
-                                        alt="..." width="50px" height="160px">
+                                    <img style="object-fit: cover" src="/assets/img/default.png"
+                                        class="card-img-top img-profil" alt="..." width="50px" height="160px">
                                 @endif
                                 <div class="card-body">
                                     <h6 style="width: 100%" class="card-title text-over d-inline-block text-truncate">
@@ -155,9 +154,9 @@
             </div>
 
             {{-- Cafe List --}}
-            <div id="cafe-list-card" class="row row-cols-2 row-cols-lg-4 g-4 p-3 mb-4">
+            <div id="cafe-list-card" class="row row-cols-12 col-sm-12 row-cols-lg-4 g-4 p-3 mb-4">
                 @foreach ($cafes as $cafe)
-                    <div class="col-6 col-md-3" style="position: relative">
+                    <div class="col-12 col-md-3 mb-1" style="position: relative">
                         {{-- Lencana --}}
                         @if ($lencana[0] == $cafe->nama_cafe)
                             <img class="lencana shadow-lg" src="/assets/img/terbaik_1.png" alt="" width="60px">
