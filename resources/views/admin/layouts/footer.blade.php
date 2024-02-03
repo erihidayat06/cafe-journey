@@ -1,15 +1,13 @@
  <!-- ======= Footer ======= -->
- <footer id="footer" class="footer">
+ {{-- <footer id="footer" class="footer">
      <div class="copyright">
          &copy; Copyright <strong><span>Cafe Journey</span></strong>. All Rights Reserved
      </div>
      <div class="credits">
          Designed by <a href="">Cafe Journey</a>
      </div>
- </footer><!-- End Footer -->
-
- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-         class="bi bi-arrow-up-short"></i></a>
+ </footer> --}}
+ <!-- End Footer -->
 
  <!-- Vendor JS Files -->
  <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
