@@ -8,12 +8,12 @@
     <title>
         Login - {{ config('app.name') }}
     </title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
 
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,700,900&display=swap');
-
         * {
             padding: 0;
             margin: 0;
@@ -21,7 +21,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif !important;
+            font-family: 'Nunito', sans-serif !important;
             height: 100vh;
             color: #3a3e42 !important;
         }
@@ -127,7 +127,7 @@
                     <div class="row">
                         <div class="col-md-6 d-flex justify-content-center align-items-center">
                             <div class="AppFormLeft">
-                                <h1>Login</h1>
+                                <h1>Masuk</h1>
 
                                 <div class="form-group position-relative mb-4">
                                     <input type="text"
@@ -138,7 +138,7 @@
                                 <div class="form-group position-relative mb-4">
                                     <input type="password"
                                         class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
-                                        id="password" placeholder="Password" name="password">
+                                        id="password" placeholder="Kata Sandi" name="password">
                                     <i class="fa fa-key"></i>
                                 </div>
                                 <div class="row  mt-4 mb-4">
@@ -147,14 +147,14 @@
                                             <input class="form-check-input" type="checkbox" value=""
                                                 id="defaultCheck1">
                                             <label class="form-check-label" for="defaultCheck1">
-                                                Remember me
+                                                Ingat Saya
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 text-right">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                Forgot Password?
+                                                Lupa Kata Sandi?
                                             </a>
                                         @endif
                                     </div>
@@ -162,13 +162,13 @@
 
                                 <button type="submit"
                                     class="btn btn-success btn-block shadow border-0 py-2 text-uppercase">
-                                    Login
+                                    Masuk
                                 </button>
 
                                 <p class="text-center mt-5">
-                                    Don't have an account?
+                                    Belum punya akun?
                                     <span>
-                                        <a class="text-danger fw-bold" href="{{ route('register') }}">Register</a>
+                                        <a class="text-danger fw-bold" href="{{ route('register') }}">Daftar Disini</a>
                                     </span>
                                 </p>
 
