@@ -108,6 +108,7 @@ Route::get('/dashboard/booking/tunggu', [DashboardBookingController::class, 'tun
 Route::get('/dashboard/booking/sukses', [DashboardBookingController::class, 'sukses'])->middleware('admin');
 Route::get('/dashboard/booking/selesai', [DashboardBookingController::class, 'selesai'])->middleware('admin');
 Route::put('/dashboard/booking/{booking}', [DashboardBookingController::class, 'update'])->middleware('admin');
+Route::post('/dashboard/beli/', [DashboardBeliController::class, 'index'])->middleware('auth')->middleware('admin');
 Route::get('/dashboard/beli/', [DashboardBeliController::class, 'index'])->middleware('auth')->middleware('admin');
 Route::get('/dashboard/analis', [AnalitikController::class, 'index'])->middleware('auth')->middleware('admin');
 

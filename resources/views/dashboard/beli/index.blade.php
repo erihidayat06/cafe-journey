@@ -60,7 +60,46 @@
                         </div>
                         <h5 class="card-title">Recent Sales <span>| Today</span></h5>
 
+                        <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
 
+
+                            <div class="col-lg-4 mb-3">
+                                <div id="reader"></div>
+                            </div>
+
+                            {{-- table qr --}}
+                            @if (request('cari'))
+                                <div class="col">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nama pemesen</th>
+                                                <th scope="col">No Pesanan</th>
+                                                <th scope="col">Pesanan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($cafes as $cafe)
+                                                @if (isset($cafe->no_pesanan))
+                                                    <tr>
+                                                        <td>{{ $cafe->user->name }}</td>
+                                                        <td> {{ $cafe->no_pesanan }}</td>
+                                                        <td> <a href="" class="btn btn-sm btn-main"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#detailPesanan{{ $cafe->no_pesanan }}">Lihat</a>
+                                                            @include('dashboard.beli.modalDetailPesan')</td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @endif
+                        </div>
+
+
+
+                        {{-- Table all beli --}}
                         <table class="table table-borderless datatable">
                             <thead>
                                 <tr>
@@ -72,7 +111,7 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                @foreach ($cafes as $cafe)
+                                @foreach ($beli as $cafe)
                                     @if (isset($cafe->no_pesanan))
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
@@ -93,4 +132,40 @@
             </div>
         </div>
     </section>
+
+
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // handle the scanned code as you like, for example:
+            $("#cari").val(decodedText)
+
+            var redirectUrl = "http://127.0.0.1:8000/dashboard/beli?cari=" + decodedText;
+
+            // Melakukan redirect ke URL yang ditentukan
+            window.location.href = redirectUrl;
+
+            scanSuccess = true;
+        }
+
+        function onScanFailure(error) {
+            // handle scan failure, usually better to ignore and keep scanning.
+            // for example:
+            console.warn(`Code scan error = ${error}`);
+        }
+
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", {
+                fps: 10,
+                qrbox: {
+                    width: 150,
+                    height: 150
+                }
+            },
+            /* verbose= */
+            false);
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    </script>
 @endsection
