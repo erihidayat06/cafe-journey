@@ -8,14 +8,21 @@ use App\Models\Beli;
 
 class DashboardBeliController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $cafe = Beli::dashboard()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->get();
-        $cafe = $cafe->unique('no_pesanan');
+
+
         $pesanan = Beli::dashboard()->latest()->get();
+        // qr
+        $cafes = Beli::dashboard()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->cari(request('cari'))->get();
+        $cafes = $cafes->unique('no_pesanan');
+
+        $beli = Beli::dashboard()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->get();
+        $beli = $beli->unique('no_pesanan');
 
         return view('dashboard.beli.index', [
-            'cafes' => $cafe,
+            'cafes' => $cafes,
+            'beli' => $beli,
             'pesanans' => $pesanan
         ]);
     }

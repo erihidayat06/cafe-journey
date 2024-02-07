@@ -43,6 +43,11 @@ class Beli extends Model
         $query->where('created_at', 'like', '%' . $filters . '%');
     }
 
+    public function scopeCari($query, $cari)
+    {
+        $query->where('no_pesanan', 'like', '%' . $cari . '%');
+    }
+
     public function scopeFiltertanggal($query, array $filters)
     {
 
