@@ -12,68 +12,68 @@ class LaporanPDFController extends Controller
     public function pesananPDF(Beli $beli)
     {
 
-       $pesanan = Beli::filter()->latest()->get();
 
+        $pesanan = $beli->where('no_pesanan', $beli->no_pesanan)->latest()->get();
 
         $data = PDF::loadview('cetakPDF.cetakPesanan', [
-            'pesanan' => $pesanan,
+            'pesanans' => $pesanan,
             'beli' => $beli
         ]);
         //mendownload laporan.pdf
-    	return $data->stream('Pesanan'. '-' . $beli->no_pesanan . '.pdf');
+        return $data->stream('Pesanan' . '-' . $beli->no_pesanan . '.pdf');
     }
 
     public function bookingPDF(Booking $booking)
     {
 
-         $data = PDF::loadview('cetakPDF.cetakBooking', [
+        $data = PDF::loadview('cetakPDF.cetakBooking', [
             'booking' => $booking
         ]);
         //mendownload laporan.pdf
-    	return $data->stream('Booking'. '-' . $booking->no_pesanan . '.pdf');
+        return $data->stream('Booking' . '-' . $booking->no_pesanan . '.pdf');
     }
 
     public function laporanBooking()
     {
-        $booking = Booking::booking()->latest()->filtertanggal(request(['dari','sampai']))->tanggal(request('filter'))->cari(request('cari'))->get();
+        $booking = Booking::booking()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->cari(request('cari'))->get();
 
-         $data = PDF::loadview('cetakPDF.cetakDataBooking', [
+        $data = PDF::loadview('cetakPDF.cetakDataBooking', [
             'bookings' => $booking
         ]);
         //mendownload laporan.pdf
-    	return $data->stream("booking" . '-' . request('status') . '-'  . date('d M Y') . '.pdf');
+        return $data->stream("booking" . '-' . request('status') . '-'  . date('d M Y') . '.pdf');
     }
 
     public function laporanBookingTunggu()
     {
-        $booking = Booking::booking()->latest()->filtertanggal(request(['dari','sampai']))->tanggal(request('filter'))->cari(request('cari'))->tunggu()->get();
+        $booking = Booking::booking()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->cari(request('cari'))->tunggu()->get();
 
-         $data = PDF::loadview('cetakPDF.cetakDataBooking', [
+        $data = PDF::loadview('cetakPDF.cetakDataBooking', [
             'bookings' => $booking
         ]);
         //mendownload laporan.pdf
-    	return $data->stream("booking". '-' . request('status')  . '-' . date('d M Y') . '.pdf');
+        return $data->stream("booking" . '-' . request('status')  . '-' . date('d M Y') . '.pdf');
     }
 
     public function laporanBookingSukses()
     {
-        $booking = Booking::booking()->latest()->filtertanggal(request(['dari','sampai']))->tanggal(request('filter'))->cari(request('cari'))->sukses()->get();
+        $booking = Booking::booking()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->cari(request('cari'))->sukses()->get();
 
-         $data = PDF::loadview('cetakPDF.cetakDataBooking', [
+        $data = PDF::loadview('cetakPDF.cetakDataBooking', [
             'bookings' => $booking
         ]);
         //mendownload laporan.pdf
-    	return $data->stream("booking". '-' . request('status')  . '-' . date('d M Y') . '.pdf');
+        return $data->stream("booking" . '-' . request('status')  . '-' . date('d M Y') . '.pdf');
     }
 
     public function laporanBookingSelesai()
     {
-        $booking = Booking::booking()->latest()->filtertanggal(request(['dari','sampai']))->tanggal(request('filter'))->cari(request('cari'))->selesai()->get();
+        $booking = Booking::booking()->latest()->filtertanggal(request(['dari', 'sampai']))->tanggal(request('filter'))->cari(request('cari'))->selesai()->get();
 
-         $data = PDF::loadview('cetakPDF.cetakDataBooking', [
+        $data = PDF::loadview('cetakPDF.cetakDataBooking', [
             'bookings' => $booking
         ]);
         //mendownload laporan.pdf
-    	return $data->stream("booking". '-' . request('status')  . '-' . date('d M Y') . '.pdf');
+        return $data->stream("booking" . '-' . request('status')  . '-' . date('d M Y') . '.pdf');
     }
 }

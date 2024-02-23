@@ -65,7 +65,7 @@
         <?php $total = 0; ?>
         <?php $jumlah = 0; ?>
 
-        @foreach ($pesanan->Where('no_pesanan', $beli->no_pesanan) as $pesanan)
+        @foreach ($pesanans as $pesanan)
             <tr>
                 <td>
                     @if (isset($pesanan->minum->nama_minuman))
