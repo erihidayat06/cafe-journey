@@ -39,6 +39,5 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('bukan_admin', function (User $user) {
             return $user->is_admin === 'bukan_admin';
         });
-
     }
 }
